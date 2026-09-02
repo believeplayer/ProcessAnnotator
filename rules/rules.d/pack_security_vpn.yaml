@@ -1,0 +1,148 @@
+# Antivirus, security suites, VPN
+rules:
+  - id: mbam
+    priority: 150
+    match: { name_equals: "MBAMService.exe" }
+    annotation: "Malwarebytes Service"
+    annotation_en: "Malwarebytes Service"
+    category: antivirus
+
+  - id: norton
+    priority: 150
+    match: { path_contains: "Norton" }
+    annotation: "Компонент Norton / Symantec"
+    annotation_en: "Norton / Symantec component"
+    category: antivirus
+
+  - id: mcafee
+    priority: 150
+    match: { path_contains: "McAfee" }
+    annotation: "Компонент McAfee"
+    annotation_en: "McAfee component"
+    category: antivirus
+
+  - id: sophos
+    priority: 150
+    match: { path_contains: "Sophos" }
+    annotation: "Компонент Sophos"
+    annotation_en: "Sophos component"
+    category: antivirus
+
+  - id: trendmicro
+    priority: 150
+    match: { path_contains: "Trend Micro" }
+    annotation: "Компонент Trend Micro"
+    annotation_en: "Trend Micro component"
+    category: antivirus
+
+  - id: crowdstrike
+    priority: 160
+    match: { path_contains: "CrowdStrike" }
+    annotation: "CrowdStrike Falcon"
+    annotation_en: "CrowdStrike Falcon"
+    category: antivirus
+
+  - id: sentinelone
+    priority: 160
+    match: { path_contains: "SentinelOne" }
+    annotation: "SentinelOne"
+    annotation_en: "SentinelOne"
+    category: antivirus
+
+  - id: carbonblack
+    priority: 150
+    match: { path_contains: "CarbonBlack" }
+    annotation: "VMware Carbon Black"
+    annotation_en: "VMware Carbon Black"
+    category: antivirus
+
+  - id: webroot
+    priority: 140
+    match: { path_contains: "Webroot" }
+    annotation: "Webroot"
+    annotation_en: "Webroot"
+    category: antivirus
+
+  - id: totalav
+    priority: 130
+    match: { path_contains: "TotalAV" }
+    annotation: "TotalAV"
+    annotation_en: "TotalAV"
+    category: antivirus
+
+  - id: driftsafe
+    priority: 140
+    match: { name_contains: "HitmanPro" }
+    annotation: "HitmanPro / Sophos second-opinion scanner"
+    annotation_en: "HitmanPro"
+    category: antivirus
+
+  - id: openvpn_gui
+    priority: 120
+    match: { name_equals: "openvpn-gui.exe" }
+    annotation: "OpenVPN GUI"
+    annotation_en: "OpenVPN GUI"
+    category: vendor
+
+  - id: wireguard
+    priority: 130
+    match: { name_contains: "wireguard" }
+    annotation: "WireGuard"
+    annotation_en: "WireGuard"
+    category: vendor
+
+  - id: nordvpn
+    priority: 140
+    match: { path_contains: "NordVPN" }
+    annotation: "NordVPN"
+    annotation_en: "NordVPN"
+    category: vendor
+
+  - id: expressvpn
+    priority: 140
+    match: { path_contains: "ExpressVPN" }
+    annotation: "ExpressVPN"
+    annotation_en: "ExpressVPN"
+    category: vendor
+
+  - id: protonvpn
+    priority: 140
+    match: { path_contains: "ProtonVPN" }
+    annotation: "Proton VPN"
+    annotation_en: "Proton VPN"
+    category: vendor
+
+  - id: mullvad
+    priority: 140
+    match: { path_contains: "Mullvad" }
+    annotation: "Mullvad VPN"
+    annotation_en: "Mullvad VPN"
+    category: vendor
+
+  - id: surfshark
+    priority: 140
+    match: { path_contains: "Surfshark" }
+    annotation: "Surfshark VPN"
+    annotation_en: "Surfshark VPN"
+    category: vendor
+
+  - id: pia
+    priority: 130
+    match: { path_contains: "Private Internet Access" }
+    annotation: "Private Internet Access VPN"
+    annotation_en: "Private Internet Access VPN"
+    category: vendor
+
+  - id: cloudflare_warp
+    priority: 130
+    match: { name_contains: "CloudflareWARP" }
+    annotation: "Cloudflare WARP"
+    annotation_en: "Cloudflare WARP"
+    category: vendor
+
+  - id: warp_svc
+    priority: 130
+    match: { name_equals: "warp-svc.exe" }
+    annotation: "Cloudflare WARP service"
+    annotation_en: "Cloudflare WARP service"
+    category: vendor

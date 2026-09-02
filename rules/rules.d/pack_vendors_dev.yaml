@@ -1,0 +1,400 @@
+# Hardware vendors, creative, development tools
+rules:
+  - id: intel_graphics
+    priority: 130
+    match: { path_contains: "Intel", name_contains: "igfx" }
+    annotation: "Intel Graphics component"
+    annotation_en: "Intel Graphics component"
+    category: vendor
+
+  - id: intel_dsa
+    priority: 140
+    match: { name_contains: "DSAService" }
+    annotation: "Intel Driver & Support Assistant"
+    annotation_en: "Intel Driver & Support Assistant"
+    category: vendor
+
+  - id: intel_dsa2
+    priority: 130
+    match: { path_contains: "Driver and Support Assistant" }
+    annotation: "Intel Driver & Support Assistant"
+    annotation_en: "Intel Driver & Support Assistant"
+    category: vendor
+
+  - id: intel_xtu
+    priority: 120
+    match: { path_contains: "Intel\\Extreme Tuning" }
+    annotation: "Intel Extreme Tuning Utility"
+    annotation_en: "Intel Extreme Tuning Utility"
+    category: vendor
+
+  - id: realtek_path
+    priority: 120
+    match: { path_contains: "Realtek" }
+    annotation: "Компонент Realtek"
+    annotation_en: "Realtek component"
+    category: vendor
+
+  - id: lghub
+    priority: 140
+    match: { name_contains: "lghub" }
+    annotation: "Logitech G HUB"
+    annotation_en: "Logitech G HUB"
+    category: vendor
+
+  - id: razer_synapse
+    priority: 140
+    match: { name_contains: "RazerSynapse" }
+    annotation: "Razer Synapse"
+    annotation_en: "Razer Synapse"
+    category: vendor
+
+  - id: corsair
+    priority: 120
+    match: { path_contains: "Corsair" }
+    annotation: "ПО Corsair"
+    annotation_en: "Corsair software"
+    category: vendor
+
+  - id: steelseries
+    priority: 130
+    match: { path_contains: "SteelSeries" }
+    annotation: "SteelSeries GG / Engine"
+    annotation_en: "SteelSeries GG / Engine"
+    category: vendor
+
+  - id: asus_armoury
+    priority: 130
+    match: { path_contains: "ASUS", name_contains: "Armoury" }
+    annotation: "ASUS Armoury Crate"
+    annotation_en: "ASUS Armoury Crate"
+    category: vendor
+
+  - id: asus
+    priority: 110
+    match: { path_contains: "ASUS" }
+    annotation: "ПО ASUS"
+    annotation_en: "ASUS software"
+    category: vendor
+
+  - id: msi_center
+    priority: 130
+    match: { path_contains: "MSI", name_contains: "Center" }
+    annotation: "MSI Center"
+    annotation_en: "MSI Center"
+    category: vendor
+
+  - id: msi
+    priority: 100
+    match: { path_contains: "MSI\\" }
+    annotation: "ПО MSI"
+    annotation_en: "MSI software"
+    category: vendor
+
+  - id: nitrosense
+    priority: 130
+    match: { name_contains: "NitroSense" }
+    annotation: "Acer NitroSense"
+    annotation_en: "Acer NitroSense"
+    category: vendor
+
+  - id: dell
+    priority: 100
+    match: { path_contains: "Dell\\" }
+    annotation: "ПО Dell"
+    annotation_en: "Dell software"
+    category: vendor
+
+  - id: lenovo
+    priority: 100
+    match: { path_contains: "Lenovo" }
+    annotation: "ПО Lenovo"
+    annotation_en: "Lenovo software"
+    category: vendor
+
+  - id: killer
+    priority: 130
+    match: { path_contains: "RivetNetworks\\Killer" }
+    annotation: "Killer Network / Intel Killer"
+    annotation_en: "Killer Network / Intel Killer networking software"
+    category: vendor
+
+  - id: adobe_reader
+    priority: 120
+    match: { name_equals: "AcroRd32.exe" }
+    annotation: "Adobe Reader"
+    annotation_en: "Adobe Reader"
+    category: worker
+
+  - id: adobe_gc
+    priority: 130
+    match: { name_equals: "AdobeGCClient.exe" }
+    annotation: "Adobe Genuine Software Integrity"
+    annotation_en: "Adobe Genuine Software Integrity"
+    category: vendor
+
+  - id: creative_cloud
+    priority: 130
+    match: { name_contains: "Creative Cloud" }
+    annotation: "Adobe Creative Cloud"
+    annotation_en: "Adobe Creative Cloud"
+    category: vendor
+
+  - id: adobe_desktop
+    priority: 130
+    match: { name_equals: "Adobe Desktop Service.exe" }
+    annotation: "Adobe Desktop Service"
+    annotation_en: "Adobe Desktop Service"
+    category: vendor
+
+  - id: photoshop
+    priority: 110
+    match: { name_equals: "Photoshop.exe" }
+    annotation: "Adobe Photoshop"
+    annotation_en: "Adobe Photoshop"
+    category: worker
+
+  - id: illustrator
+    priority: 110
+    match: { name_equals: "Illustrator.exe" }
+    annotation: "Adobe Illustrator"
+    annotation_en: "Adobe Illustrator"
+    category: worker
+
+  - id: premiere
+    priority: 110
+    match: { name_contains: "Adobe Premiere" }
+    annotation: "Adobe Premiere Pro"
+    annotation_en: "Adobe Premiere Pro"
+    category: worker
+
+  - id: code_oss
+    priority: 120
+    match: { name_equals: "Code.exe" }
+    annotation: "Visual Studio Code"
+    annotation_en: "Visual Studio Code"
+    category: worker
+
+  - id: cursor
+    priority: 120
+    match: { name_equals: "Cursor.exe" }
+    annotation: "Cursor IDE"
+    annotation_en: "Cursor IDE"
+    category: worker
+
+  - id: devenv
+    priority: 120
+    match: { name_equals: "devenv.exe" }
+    annotation: "Microsoft Visual Studio"
+    annotation_en: "Microsoft Visual Studio"
+    category: worker
+
+  - id: vctip
+    priority: 100
+    match: { name_equals: "vctip.exe" }
+    annotation: "Visual C++ Technology Improvement Program (телеметрия VS)"
+    annotation_en: "Visual C++ TIP (VS telemetry helper)"
+    category: telemetry
+
+  - id: idea64
+    priority: 130
+    match: { name_equals: "idea64.exe" }
+    annotation: "IntelliJ IDEA"
+    annotation_en: "IntelliJ IDEA"
+    category: worker
+
+  - id: pycharm64
+    priority: 130
+    match: { name_equals: "pycharm64.exe" }
+    annotation: "PyCharm"
+    annotation_en: "PyCharm"
+    category: worker
+
+  - id: webstorm64
+    priority: 130
+    match: { name_equals: "webstorm64.exe" }
+    annotation: "WebStorm"
+    annotation_en: "WebStorm"
+    category: worker
+
+  - id: clion64
+    priority: 130
+    match: { name_equals: "clion64.exe" }
+    annotation: "CLion"
+    annotation_en: "CLion"
+    category: worker
+
+  - id: toolbox
+    priority: 120
+    match: { name_equals: "jetbrains-toolbox.exe" }
+    annotation: "JetBrains Toolbox"
+    annotation_en: "JetBrains Toolbox"
+    category: worker
+
+  - id: java
+    priority: 100
+    match: { name_equals: "java.exe" }
+    annotation: "Java runtime"
+    annotation_en: "Java runtime"
+    category: worker
+
+  - id: javaw
+    priority: 100
+    match: { name_equals: "javaw.exe" }
+    annotation: "Java (windowless)"
+    annotation_en: "Java (windowless)"
+    category: worker
+
+  - id: docker
+    priority: 130
+    match: { name_equals: "Docker Desktop.exe" }
+    annotation: "Docker Desktop"
+    annotation_en: "Docker Desktop"
+    category: worker
+
+  - id: com_docker
+    priority: 120
+    match: { name_contains: "com.docker" }
+    annotation: "Docker Desktop helper"
+    annotation_en: "Docker Desktop helper"
+    category: worker
+
+  - id: docker_backend
+    priority: 120
+    match: { name_equals: "com.docker.backend.exe" }
+    annotation: "Docker Desktop backend"
+    annotation_en: "Docker Desktop backend"
+    category: worker
+
+  - id: git
+    priority: 90
+    match: { name_equals: "git.exe" }
+    annotation: "Git"
+    annotation_en: "Git"
+    category: worker
+
+  - id: totalcmd
+    priority: 100
+    match: { name_equals: "TOTALCMD64.EXE" }
+    annotation: "Total Commander"
+    annotation_en: "Total Commander"
+    category: worker
+
+  - id: sharex
+    priority: 100
+    match: { name_equals: "ShareX.exe" }
+    annotation: "ShareX"
+    annotation_en: "ShareX"
+    category: worker
+
+  - id: obs
+    priority: 120
+    match: { name_equals: "obs64.exe" }
+    annotation: "OBS Studio"
+    annotation_en: "OBS Studio"
+    category: worker
+
+  - id: obs32
+    priority: 120
+    match: { name_equals: "obs32.exe" }
+    annotation: "OBS Studio"
+    annotation_en: "OBS Studio"
+    category: worker
+
+  - id: vlc
+    priority: 100
+    match: { name_equals: "vlc.exe" }
+    annotation: "VLC media player"
+    annotation_en: "VLC media player"
+    category: worker
+
+  - id: foobar2000
+    priority: 100
+    match: { name_equals: "foobar2000.exe" }
+    annotation: "foobar2000"
+    annotation_en: "foobar2000"
+    category: worker
+
+  - id: qbit
+    priority: 110
+    match: { name_equals: "qbittorrent.exe" }
+    annotation: "qBittorrent"
+    annotation_en: "qBittorrent"
+    category: worker
+
+  - id: utorrent
+    priority: 110
+    match: { name_equals: "uTorrent.exe" }
+    annotation: "µTorrent"
+    annotation_en: "µTorrent"
+    category: worker
+
+  - id: anydesk
+    priority: 130
+    match: { name_equals: "AnyDesk.exe" }
+    annotation: "AnyDesk (удалённый доступ)"
+    annotation_en: "AnyDesk (remote access)"
+    category: vendor
+
+  - id: teamviewer
+    priority: 130
+    match: { name_equals: "TeamViewer.exe" }
+    annotation: "TeamViewer"
+    annotation_en: "TeamViewer"
+    category: vendor
+
+  - id: teamviewer_service
+    priority: 130
+    match: { name_equals: "TeamViewer_Service.exe" }
+    annotation: "TeamViewer Service"
+    annotation_en: "TeamViewer Service"
+    category: vendor
+
+  - id: rustdesk
+    priority: 120
+    match: { name_equals: "rustdesk.exe" }
+    annotation: "RustDesk"
+    annotation_en: "RustDesk"
+    category: vendor
+
+  - id: parsec
+    priority: 120
+    match: { name_equals: "parsecd.exe" }
+    annotation: "Parsec"
+    annotation_en: "Parsec"
+    category: vendor
+
+  - id: google_crash
+    priority: 100
+    match: { name_equals: "crashpad_handler.exe", path_contains: "Google" }
+    annotation: "Google Crashpad handler"
+    annotation_en: "Google Crashpad handler"
+    category: worker
+
+  - id: apple_mobile
+    priority: 120
+    match: { path_contains: "Apple", name_contains: "AppleMobile" }
+    annotation: "Apple Mobile Device Support"
+    annotation_en: "Apple Mobile Device Support"
+    category: vendor
+
+  - id: itunes
+    priority: 110
+    match: { name_equals: "iTunes.exe" }
+    annotation: "Apple iTunes"
+    annotation_en: "Apple iTunes"
+    category: worker
+
+  - id: wsl
+    priority: 110
+    match: { name_equals: "wsl.exe" }
+    annotation: "Windows Subsystem for Linux"
+    annotation_en: "Windows Subsystem for Linux"
+    category: system
+
+  - id: vmmem
+    priority: 120
+    match: { name_equals: "vmmem" }
+    annotation: "WSL2 / Hyper-V memory process"
+    annotation_en: "WSL2 / Hyper-V memory process"
+    category: system

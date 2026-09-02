@@ -1,0 +1,3762 @@
+# Converted from allsmall.yaml — valid ProcessAnnotator rules format
+# Place in rules/rules.d/ next to the executable
+rules:
+  - id: core_smss
+    priority: 105
+    match:
+      name_equals: "smss.exe"
+    annotation: "Session Manager Subsystem — инициализация сессий Windows"
+    annotation_en: "Session Manager Subsystem — initializes Windows sessions"
+    category: system
+    severity: info
+
+  - id: core_winlogon
+    priority: 105
+    match:
+      name_equals: "winlogon.exe"
+    annotation: "Windows Logon Application — вход пользователя и безопасность рабочего стола"
+    annotation_en: "Windows Logon Application — user logon and secure desktop"
+    category: system
+    severity: info
+
+  - id: core_userinit
+    priority: 105
+    match:
+      name_equals: "userinit.exe"
+    annotation: "Userinit — инициализация пользовательской сессии после входа"
+    annotation_en: "Userinit — initializes user session after logon"
+    category: system
+    severity: info
+
+  - id: core_logonui
+    priority: 105
+    match:
+      name_equals: "LogonUI.exe"
+    annotation: "Экран входа Windows"
+    annotation_en: "Windows logon screen"
+    category: system
+    severity: info
+
+  - id: core_consent
+    priority: 105
+    match:
+      name_equals: "consent.exe"
+    annotation: "UAC consent — процесс подтверждения повышения привилегий"
+    annotation_en: "UAC consent — elevation confirmation process"
+    category: system
+    severity: info
+
+  - id: core_system
+    priority: 105
+    match:
+      name_equals: "System"
+    annotation: "System — системный процесс ядра Windows"
+    annotation_en: "System — Windows kernel system process"
+    category: system
+    severity: info
+
+  - id: core_registry
+    priority: 105
+    match:
+      name_equals: "Registry"
+    annotation: "Registry — процесс реестра Windows"
+    annotation_en: "Registry — Windows registry process"
+    category: system
+    severity: info
+
+  - id: core_secure_system
+    priority: 105
+    match:
+      name_equals: "Secure System"
+    annotation: "Secure System — защищённый системный процесс Windows"
+    annotation_en: "Secure System — protected Windows system process"
+    category: system
+    severity: info
+
+  - id: core_memory_compression
+    priority: 105
+    match:
+      name_equals: "Memory Compression"
+    annotation: "Memory Compression — сжатие памяти Windows для экономии RAM"
+    annotation_en: "Memory Compression — Windows memory compression"
+    category: system
+    severity: info
+
+  - id: core_idle
+    priority: 100
+    match:
+      name_equals: "System Idle Process"
+    annotation: "System Idle Process — показывает незанятое время CPU"
+    annotation_en: "System Idle Process — represents idle CPU time"
+    category: system
+    severity: info
+
+  - id: core_spoolsv
+    priority: 100
+    match:
+      name_equals: "spoolsv.exe"
+    annotation: "Print Spooler — служба очереди печати"
+    annotation_en: "Print Spooler — print queue service"
+    category: system
+    severity: info
+
+  - id: core_printisolation
+    priority: 100
+    match:
+      name_equals: "PrintIsolationHost.exe"
+    annotation: "Print Isolation Host — изоляция драйверов печати"
+    annotation_en: "Print Isolation Host — printer driver isolation"
+    category: system
+    severity: info
+
+  - id: core_wermgr
+    priority: 95
+    match:
+      name_equals: "WerMgr.exe"
+    annotation: "Windows Error Reporting Manager"
+    annotation_en: "Windows Error Reporting Manager"
+    category: system
+    severity: info
+
+  - id: core_werfault
+    priority: 95
+    match:
+      name_equals: "WerFault.exe"
+    annotation: "Windows Error Reporting Fault Handler"
+    annotation_en: "Windows Error Reporting Fault Handler"
+    category: system
+    severity: info
+
+  - id: core_dwwin
+    priority: 95
+    match:
+      name_equals: "dwwin.exe"
+    annotation: "Windows Error Reporting UI / Dr. Watson"
+    annotation_en: "Windows Error Reporting UI / Dr. Watson"
+    category: system
+    severity: info
+
+  - id: core_wmiprvse
+    priority: 95
+    match:
+      name_equals: "WmiPrvSE.exe"
+    annotation: "WMI Provider Host — хост провайдеров WMI"
+    annotation_en: "WMI Provider Host — hosts WMI providers"
+    category: system
+    severity: info
+
+  - id: core_unsecapp
+    priority: 95
+    match:
+      name_equals: "unsecapp.exe"
+    annotation: "WMI UnsecApp — приём асинхронных WMI-событий"
+    annotation_en: "WMI UnsecApp — receives asynchronous WMI events"
+    category: system
+    severity: info
+
+  - id: core_scrcons
+    priority: 95
+    match:
+      name_equals: "scrcons.exe"
+    annotation: "WMI Standard Event Consumer"
+    annotation_en: "WMI Standard Event Consumer"
+    category: system
+    severity: info
+
+  - id: core_searchprotocolhost
+    priority: 95
+    match:
+      name_equals: "SearchProtocolHost.exe"
+    annotation: "Windows Search Protocol Host"
+    annotation_en: "Windows Search Protocol Host"
+    category: system
+    severity: info
+
+  - id: core_searchfilterhost
+    priority: 95
+    match:
+      name_equals: "SearchFilterHost.exe"
+    annotation: "Windows Search Filter Host"
+    annotation_en: "Windows Search Filter Host"
+    category: system
+    severity: info
+
+  - id: core_presentationfontcache
+    priority: 90
+    match:
+      name_equals: "PresentationFontCache.exe"
+    annotation: "Presentation Font Cache — кэш шрифтов для .NET/WPF"
+    annotation_en: "Presentation Font Cache — font cache for .NET/WPF"
+    category: system
+    severity: info
+
+  - id: core_fontview
+    priority: 90
+    match:
+      name_equals: "fontview.exe"
+    annotation: "Просмотр шрифтов Windows"
+    annotation_en: "Windows Font Viewer"
+    category: system
+    severity: info
+
+  - id: core_msdtc
+    priority: 95
+    match:
+      name_equals: "msdtc.exe"
+    annotation: "Distributed Transaction Coordinator"
+    annotation_en: "Distributed Transaction Coordinator"
+    category: system
+    severity: info
+
+  - id: core_vssvc
+    priority: 95
+    match:
+      name_equals: "VSSVC.exe"
+    annotation: "Volume Shadow Copy Service — теневые копии и резервное копирование"
+    annotation_en: "Volume Shadow Copy Service — snapshots/backups"
+    category: system
+    severity: info
+
+  - id: core_taskeng
+    priority: 90
+    match:
+      name_equals: "taskeng.exe"
+    annotation: "Task Scheduler Engine (старые версии Windows)"
+    annotation_en: "Task Scheduler Engine (older Windows)"
+    category: system
+    severity: info
+
+  - id: core_taskhost
+    priority: 90
+    match:
+      name_equals: "taskhost.exe"
+    annotation: "Task Host (общий хост задач)"
+    annotation_en: "Task Host (generic task host)"
+    category: system
+    severity: info
+
+  - id: core_taskhostex
+    priority: 90
+    match:
+      name_equals: "taskhostex.exe"
+    annotation: "Task Host Extended"
+    annotation_en: "Task Host Extended"
+    category: system
+    severity: info
+
+  - id: core_regedit
+    priority: 90
+    match:
+      name_equals: "regedit.exe"
+    annotation: "Редактор реестра Windows"
+    annotation_en: "Windows Registry Editor"
+    category: system
+    severity: info
+
+  - id: core_msconfig
+    priority: 90
+    match:
+      name_equals: "msconfig.exe"
+    annotation: "Конфигурация системы Windows"
+    annotation_en: "Windows System Configuration"
+    category: system
+    severity: info
+
+  - id: core_control
+    priority: 90
+    match:
+      name_equals: "control.exe"
+    annotation: "Панель управления Windows"
+    annotation_en: "Windows Control Panel"
+    category: system
+    severity: info
+
+  - id: core_cmd
+    priority: 90
+    match:
+      name_equals: "cmd.exe"
+    annotation: "Командная строка Windows"
+    annotation_en: "Windows Command Prompt"
+    category: system
+    severity: info
+
+  - id: core_powershell
+    priority: 90
+    match:
+      name_equals: "powershell.exe"
+    annotation: "Windows PowerShell"
+    annotation_en: "Windows PowerShell"
+    category: system
+    severity: info
+
+  - id: core_pwsh
+    priority: 90
+    match:
+      name_equals: "pwsh.exe"
+    annotation: "PowerShell 7+ (pwsh)"
+    annotation_en: "PowerShell 7+ (pwsh)"
+    category: system
+    severity: info
+
+  - id: core_windowsterminal
+    priority: 90
+    match:
+      name_equals: "WindowsTerminal.exe"
+    annotation: "Windows Terminal"
+    annotation_en: "Windows Terminal"
+    category: system
+    severity: info
+
+  - id: core_notepad
+    priority: 80
+    match:
+      name_equals: "notepad.exe"
+    annotation: "Блокнот Windows"
+    annotation_en: "Windows Notepad"
+    category: system
+    severity: info
+
+  - id: core_mspaint
+    priority: 80
+    match:
+      name_equals: "mspaint.exe"
+    annotation: "Paint"
+    annotation_en: "Paint"
+    category: system
+    severity: info
+
+  - id: core_snippingtool
+    priority: 90
+    match:
+      name_equals: "SnippingTool.exe"
+    annotation: "Ножницы / Snipping Tool"
+    annotation_en: "Snipping Tool"
+    category: system
+    severity: info
+
+  - id: core_screensketch
+    priority: 90
+    match:
+      name_equals: "ScreenSketch.exe"
+    annotation: "Snip & Sketch / эскиз экрана"
+    annotation_en: "Snip & Sketch"
+    category: system
+    severity: info
+
+  - id: core_wmplayer
+    priority: 85
+    match:
+      name_equals: "wmplayer.exe"
+    annotation: "Windows Media Player"
+    annotation_en: "Windows Media Player"
+    category: system
+    severity: info
+
+  - id: svchost_dcomlaunch
+    priority: 65
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k DcomLaunch"
+    annotation: "svchost: DCOM Launch — критическая служба запуска DCOM"
+    annotation_en: "svchost: DCOM Launch — critical DCOM launch service"
+    category: system
+    severity: info
+
+  - id: svchost_rpcss
+    priority: 65
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k RPCSS"
+    annotation: "svchost: RPCSS — Remote Procedure Call Service"
+    annotation_en: "svchost: RPCSS — Remote Procedure Call Service"
+    category: system
+    severity: info
+
+  - id: svchost_netsvcs
+    priority: 64
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k netsvcs"
+    annotation: "svchost: netsvcs — группа сетевых служб Windows"
+    annotation_en: "svchost: netsvcs — Windows network services group"
+    category: system
+    severity: info
+
+  - id: svchost_localservice
+    priority: 63
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k LocalService"
+    annotation: "svchost: LocalService — службы с локальными привилегиями"
+    annotation_en: "svchost: LocalService — local service group"
+    category: system
+    severity: info
+
+  - id: svchost_networkservice
+    priority: 63
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k NetworkService"
+    annotation: "svchost: NetworkService — сетевые службы с ограниченным доступом"
+    annotation_en: "svchost: NetworkService — network service group"
+    category: system
+    severity: info
+
+  - id: svchost_termsvcs
+    priority: 62
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k termsvcs"
+    annotation: "svchost: termsvcs — Remote Desktop Services / RDP"
+    annotation_en: "svchost: termsvcs — Remote Desktop Services / RDP"
+    category: system
+    severity: info
+
+  - id: svchost_unistack
+    priority: 61
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k UnistackSvcGroup"
+    annotation: "svchost: UnistackSvcGroup — службы UWP/Store-приложений"
+    annotation_en: "svchost: UnistackSvcGroup — UWP/Store app services"
+    category: system
+    severity: info
+
+  - id: svchost_clipboard
+    priority: 61
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k ClipboardSvcGroup"
+    annotation: "svchost: ClipboardSvcGroup — службы буфера обмена"
+    annotation_en: "svchost: ClipboardSvcGroup — clipboard services"
+    category: system
+    severity: info
+
+  - id: svchost_localsystemnetworkrestricted
+    priority: 60
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k LocalSystemNetworkRestricted"
+    annotation: "svchost: LocalSystemNetworkRestricted — службы с ограниченным сетевым доступом"
+    annotation_en: "svchost: LocalSystemNetworkRestricted — restricted network services"
+    category: system
+    severity: info
+
+  - id: svchost_wersvcgroup
+    priority: 59
+    match:
+      name_equals: "svchost.exe"
+      cmdline_contains: "-k WerSvcGroup"
+    annotation: "svchost: WerSvcGroup — Windows Error Reporting services"
+    annotation_en: "svchost: WerSvcGroup — Windows Error Reporting services"
+    category: system
+    severity: info
+
+  - id: tel_compattelrunner
+    priority: 165
+    match:
+      name_equals: "CompatTelRunner.exe"
+    annotation: "Compatibility Telemetry — сбор данных совместимости Windows"
+    annotation_en: "Compatibility Telemetry — Windows compatibility data collection"
+    category: telemetry
+    severity: info
+    actions:
+      - "Можно ограничить в Параметры → Конфиденциальность → Диагностика"
+
+  - id: tel_devicecensus
+    priority: 160
+    match:
+      name_equals: "DeviceCensus.exe"
+    annotation: "Device Census — сбор сведений об устройстве для Microsoft"
+    annotation_en: "Device Census — collects device information for Microsoft"
+    category: telemetry
+    severity: info
+
+  - id: tel_aggregatorhost
+    priority: 155
+    match:
+      name_equals: "AggregatorHost.exe"
+    annotation: "AggregatorHost — компонент телеметрии/диагностики Windows"
+    annotation_en: "AggregatorHost — Windows telemetry/diagnostics component"
+    category: telemetry
+    severity: info
+
+  - id: tel_usoclient
+    priority: 150
+    match:
+      name_equals: "UsoClient.exe"
+    annotation: "UsoClient — клиент Update Orchestrator (Windows Update)"
+    annotation_en: "UsoClient — Update Orchestrator client (Windows Update)"
+    category: updater
+    severity: info
+
+  - id: tel_musnotification
+    priority: 150
+    match:
+      name_equals: "MusNotification.exe"
+    annotation: "Windows Update notification UX"
+    annotation_en: "Windows Update notification UX"
+    category: updater
+    severity: info
+
+  - id: tel_musnotify
+    priority: 150
+    match:
+      name_equals: "MusNotify.exe"
+    annotation: "Windows Update notify helper"
+    annotation_en: "Windows Update notify helper"
+    category: updater
+    severity: info
+
+  - id: tel_wuapihost
+    priority: 140
+    match:
+      name_equals: "wuapihost.exe"
+    annotation: "Windows Update API host"
+    annotation_en: "Windows Update API host"
+    category: updater
+    severity: info
+
+  - id: tel_sedsvc
+    priority: 140
+    match:
+      name_equals: "sedsvc.exe"
+    annotation: "Windows Update health / servicing telemetry"
+    annotation_en: "Windows Update health / servicing telemetry"
+    category: updater
+    severity: info
+
+  - id: tel_uhssvc
+    priority: 140
+    match:
+      name_equals: "Uhssvc.exe"
+    annotation: "Microsoft Update Health Service"
+    annotation_en: "Microsoft Update Health Service"
+    category: updater
+    severity: info
+
+  - id: def_mpcmdrun
+    priority: 175
+    match:
+      name_equals: "MpCmdRun.exe"
+    annotation: "Microsoft Defender command-line tool"
+    annotation_en: "Microsoft Defender command-line tool"
+    category: antivirus
+    severity: info
+
+  - id: def_sechealthui
+    priority: 170
+    match:
+      name_equals: "SecHealthUI.exe"
+    annotation: "Windows Security UI"
+    annotation_en: "Windows Security UI"
+    category: antivirus
+    severity: info
+
+  - id: def_securityhealthhost
+    priority: 165
+    match:
+      name_equals: "SecurityHealthHost.exe"
+    annotation: "Windows Security Health Host"
+    annotation_en: "Windows Security Health Host"
+    category: antivirus
+    severity: info
+
+  - id: av_norton
+    priority: 155
+    match:
+      path_contains: "Norton"
+    annotation: "Norton Antivirus component"
+    annotation_en: "Norton Antivirus component"
+    category: antivirus
+    severity: info
+
+  - id: av_mcafee
+    priority: 155
+    match:
+      path_contains: "McAfee"
+    annotation: "McAfee security component"
+    annotation_en: "McAfee security component"
+    category: antivirus
+    severity: info
+
+  - id: av_trendmicro
+    priority: 155
+    match:
+      path_contains: "Trend Micro"
+    annotation: "Trend Micro security component"
+    annotation_en: "Trend Micro security component"
+    category: antivirus
+    severity: info
+
+  - id: av_fsecure
+    priority: 155
+    match:
+      path_contains: "F-Secure"
+    annotation: "F-Secure security component"
+    annotation_en: "F-Secure security component"
+    category: antivirus
+    severity: info
+
+  - id: av_sophos
+    priority: 155
+    match:
+      path_contains: "Sophos"
+    annotation: "Sophos security component"
+    annotation_en: "Sophos security component"
+    category: antivirus
+    severity: info
+
+  - id: av_webroot
+    priority: 155
+    match:
+      path_contains: "Webroot"
+    annotation: "Webroot security component"
+    annotation_en: "Webroot security component"
+    category: antivirus
+    severity: info
+
+  - id: av_panda
+    priority: 155
+    match:
+      path_contains: "Panda"
+    annotation: "Panda security component"
+    annotation_en: "Panda security component"
+    category: antivirus
+    severity: info
+
+  - id: av_drweb
+    priority: 155
+    match:
+      path_contains: "DrWeb"
+    annotation: "Dr.Web security component"
+    annotation_en: "Dr.Web security component"
+    category: antivirus
+    severity: info
+
+  - id: av_comodo
+    priority: 155
+    match:
+      path_contains: "COMODO"
+    annotation: "COMODO security component"
+    annotation_en: "COMODO security component"
+    category: antivirus
+    severity: info
+
+  - id: av_emsisoft
+    priority: 155
+    match:
+      path_contains: "Emsisoft"
+    annotation: "Emsisoft security component"
+    annotation_en: "Emsisoft security component"
+    category: antivirus
+    severity: info
+
+  - id: av_gdata
+    priority: 155
+    match:
+      path_contains: "G DATA"
+    annotation: "G DATA security component"
+    annotation_en: "G DATA security component"
+    category: antivirus
+    severity: info
+
+  - id: av_avira
+    priority: 155
+    match:
+      path_contains: "Avira"
+    annotation: "Avira security component"
+    annotation_en: "Avira security component"
+    category: antivirus
+    severity: info
+
+  - id: av_vipre
+    priority: 155
+    match:
+      path_contains: "VIPRE"
+    annotation: "VIPRE security component"
+    annotation_en: "VIPRE security component"
+    category: antivirus
+    severity: info
+
+  - id: av_k7
+    priority: 155
+    match:
+      path_contains: "K7"
+    annotation: "K7 security component"
+    annotation_en: "K7 security component"
+    category: antivirus
+    severity: info
+
+  - id: av_quickheal
+    priority: 155
+    match:
+      path_contains: "Quick Heal"
+    annotation: "Quick Heal security component"
+    annotation_en: "Quick Heal security component"
+    category: antivirus
+    severity: info
+
+  - id: av_crowdstrike
+    priority: 160
+    match:
+      path_contains: "CrowdStrike"
+    annotation: "CrowdStrike Falcon / EDR component"
+    annotation_en: "CrowdStrike Falcon / EDR component"
+    category: antivirus
+    severity: info
+
+  - id: av_sentinelone
+    priority: 160
+    match:
+      path_contains: "SentinelOne"
+    annotation: "SentinelOne agent component"
+    annotation_en: "SentinelOne agent component"
+    category: antivirus
+    severity: info
+
+  - id: av_carbonblack
+    priority: 160
+    match:
+      path_contains: "Carbon Black"
+    annotation: "Carbon Black EDR component"
+    annotation_en: "Carbon Black EDR component"
+    category: antivirus
+    severity: info
+
+  - id: av_elastic
+    priority: 155
+    match:
+      path_contains: "Elastic"
+    annotation: "Elastic Agent / security component"
+    annotation_en: "Elastic Agent / security component"
+    category: antivirus
+    severity: info
+
+  - id: av_hitmanpro
+    priority: 150
+    match:
+      path_contains: "HitmanPro"
+    annotation: "HitmanPro anti-malware component"
+    annotation_en: "HitmanPro anti-malware component"
+    category: antivirus
+    severity: info
+
+  - id: br_brave_worker
+    priority: 150
+    match:
+      name_equals: "brave.exe"
+      cmdline_contains: "--type="
+    annotation: "Brave worker process (renderer/gpu/utility)"
+    annotation_en: "Brave worker process (renderer/gpu/utility)"
+    category: browser_worker
+    severity: info
+
+  - id: br_brave_main
+    priority: 130
+    match:
+      name_equals: "brave.exe"
+    annotation: "Brave Browser (main process)"
+    annotation_en: "Brave Browser (main process)"
+    category: worker
+    severity: info
+
+  - id: br_opera_worker
+    priority: 150
+    match:
+      name_equals: "opera.exe"
+      cmdline_contains: "--type="
+    annotation: "Opera worker process"
+    annotation_en: "Opera worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_opera_main
+    priority: 130
+    match:
+      name_equals: "opera.exe"
+    annotation: "Opera Browser (main process)"
+    annotation_en: "Opera Browser (main process)"
+    category: worker
+    severity: info
+
+  - id: br_operagx_worker
+    priority: 155
+    match:
+      path_contains: "Opera GX"
+      cmdline_contains: "--type="
+    annotation: "Opera GX worker process"
+    annotation_en: "Opera GX worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_operagx_main
+    priority: 135
+    match:
+      path_contains: "Opera GX"
+    annotation: "Opera GX (main or helper)"
+    annotation_en: "Opera GX (main or helper)"
+    category: worker
+    severity: info
+
+  - id: br_vivaldi_worker
+    priority: 150
+    match:
+      name_equals: "vivaldi.exe"
+      cmdline_contains: "--type="
+    annotation: "Vivaldi worker process"
+    annotation_en: "Vivaldi worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_vivaldi_main
+    priority: 130
+    match:
+      name_equals: "vivaldi.exe"
+    annotation: "Vivaldi Browser (main process)"
+    annotation_en: "Vivaldi Browser (main process)"
+    category: worker
+    severity: info
+
+  - id: br_yandex_worker
+    priority: 155
+    match:
+      path_contains: "Yandex"
+      cmdline_contains: "--type="
+    annotation: "Yandex Browser worker process"
+    annotation_en: "Yandex Browser worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_yandex_main
+    priority: 135
+    match:
+      path_contains: "Yandex"
+    annotation: "Yandex Browser (main or helper)"
+    annotation_en: "Yandex Browser (main or helper)"
+    category: worker
+    severity: info
+
+  - id: br_waterfox_worker
+    priority: 150
+    match:
+      name_equals: "waterfox.exe"
+      cmdline_contains: "--type="
+    annotation: "Waterfox worker process"
+    annotation_en: "Waterfox worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_waterfox_main
+    priority: 130
+    match:
+      name_equals: "waterfox.exe"
+    annotation: "Waterfox Browser (main process)"
+    annotation_en: "Waterfox Browser (main process)"
+    category: worker
+    severity: info
+
+  - id: br_tor
+    priority: 170
+    match:
+      name_equals: "firefox.exe"
+      path_contains: "Tor Browser"
+    annotation: "Tor Browser (на базе Firefox)"
+    annotation_en: "Tor Browser (Firefox-based)"
+    category: browser_worker
+    severity: info
+
+  - id: br_chromium_worker
+    priority: 155
+    match:
+      name_equals: "chrome.exe"
+      path_contains: "Chromium"
+      cmdline_contains: "--type="
+    annotation: "Chromium worker process"
+    annotation_en: "Chromium worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_chromium_main
+    priority: 135
+    match:
+      name_equals: "chrome.exe"
+      path_contains: "Chromium"
+    annotation: "Chromium Browser (main process)"
+    annotation_en: "Chromium Browser (main process)"
+    category: worker
+    severity: info
+
+  - id: br_msedge_worker
+    priority: 155
+    match:
+      name_equals: "msedge.exe"
+      cmdline_contains: "--type="
+    annotation: "Microsoft Edge worker process"
+    annotation_en: "Microsoft Edge worker process"
+    category: browser_worker
+    severity: info
+
+  - id: br_crashpad
+    priority: 135
+    match:
+      name_equals: "crashpad_handler.exe"
+    annotation: "Crashpad handler — сбор аварийных дампов Chromium/Electron-приложений"
+    annotation_en: "Crashpad handler — crash reporting for Chromium/Electron apps"
+    category: browser_worker
+    severity: info
+
+  - id: br_cefsharp
+    priority: 150
+    match:
+      name_equals: "CefSharp.BrowserSubprocess.exe"
+    annotation: "CefSharp browser subprocess (встраиваемый Chromium)"
+    annotation_en: "CefSharp browser subprocess (embedded Chromium)"
+    category: browser_worker
+    severity: info
+
+  - id: br_qtwebengine
+    priority: 150
+    match:
+      name_equals: "QtWebEngineProcess.exe"
+    annotation: "Qt WebEngine process (встраиваемый браузерный движок)"
+    annotation_en: "Qt WebEngine process (embedded browser engine)"
+    category: browser_worker
+    severity: info
+
+  - id: br_edgeupdate
+    priority: 145
+    match:
+      name_equals: "msedgeupdate.exe"
+    annotation: "Microsoft Edge Update"
+    annotation_en: "Microsoft Edge Update"
+    category: updater
+    severity: info
+
+  - id: br_googlecrashhandler
+    priority: 145
+    match:
+      name_equals: "GoogleCrashHandler.exe"
+    annotation: "Google Crash Handler"
+    annotation_en: "Google Crash Handler"
+    category: updater
+    severity: info
+
+  - id: msg_slack_worker
+    priority: 150
+    match:
+      name_equals: "slack.exe"
+      cmdline_contains: "--type="
+    annotation: "Slack helper process"
+    annotation_en: "Slack helper process"
+    category: browser_worker
+    severity: info
+
+  - id: msg_slack_main
+    priority: 130
+    match:
+      name_equals: "slack.exe"
+    annotation: "Slack (main process)"
+    annotation_en: "Slack (main process)"
+    category: worker
+    severity: info
+
+  - id: msg_ms_teams_new
+    priority: 140
+    match:
+      name_equals: "ms-teams.exe"
+    annotation: "Microsoft Teams (new)"
+    annotation_en: "Microsoft Teams (new)"
+    category: worker
+    severity: info
+
+  - id: msg_skype
+    priority: 130
+    match:
+      name_equals: "Skype.exe"
+    annotation: "Skype"
+    annotation_en: "Skype"
+    category: worker
+    severity: info
+
+  - id: msg_skype_background
+    priority: 130
+    match:
+      name_equals: "SkypeBackgroundHost.exe"
+    annotation: "Skype background host"
+    annotation_en: "Skype background host"
+    category: worker
+    severity: info
+
+  - id: msg_signal
+    priority: 130
+    match:
+      name_equals: "Signal.exe"
+    annotation: "Signal Messenger"
+    annotation_en: "Signal Messenger"
+    category: worker
+    severity: info
+
+  - id: msg_whatsapp
+    priority: 130
+    match:
+      name_equals: "WhatsApp.exe"
+    annotation: "WhatsApp Desktop"
+    annotation_en: "WhatsApp Desktop"
+    category: worker
+    severity: info
+
+  - id: msg_viber
+    priority: 130
+    match:
+      name_equals: "Viber.exe"
+    annotation: "Viber"
+    annotation_en: "Viber"
+    category: worker
+    severity: info
+
+  - id: msg_wechat
+    priority: 130
+    match:
+      name_equals: "WeChat.exe"
+    annotation: "WeChat"
+    annotation_en: "WeChat"
+    category: worker
+    severity: info
+
+  - id: msg_qq
+    priority: 130
+    match:
+      name_equals: "QQ.exe"
+    annotation: "Tencent QQ"
+    annotation_en: "Tencent QQ"
+    category: worker
+    severity: info
+
+  - id: msg_element
+    priority: 130
+    match:
+      name_equals: "Element.exe"
+    annotation: "Element (Matrix client)"
+    annotation_en: "Element (Matrix client)"
+    category: worker
+    severity: info
+
+  - id: msg_miro
+    priority: 125
+    match:
+      name_equals: "Miro.exe"
+    annotation: "Miro desktop app"
+    annotation_en: "Miro desktop app"
+    category: worker
+    severity: info
+
+  - id: msg_pidgin
+    priority: 120
+    match:
+      name_equals: "pidgin.exe"
+    annotation: "Pidgin IM"
+    annotation_en: "Pidgin IM"
+    category: worker
+    severity: info
+
+  - id: msg_trillian
+    priority: 120
+    match:
+      name_equals: "trillian.exe"
+    annotation: "Trillian Messenger"
+    annotation_en: "Trillian Messenger"
+    category: worker
+    severity: info
+
+  - id: game_epic_launcher
+    priority: 140
+    match:
+      name_equals: "EpicGamesLauncher.exe"
+    annotation: "Epic Games Launcher"
+    annotation_en: "Epic Games Launcher"
+    category: worker
+    severity: info
+
+  - id: game_epic_webhelper
+    priority: 150
+    match:
+      name_equals: "EpicWebHelper.exe"
+    annotation: "Epic Games web helper (Chromium UI)"
+    annotation_en: "Epic Games web helper (Chromium UI)"
+    category: browser_worker
+    severity: info
+
+  - id: game_epic_service
+    priority: 135
+    match:
+      name_equals: "EpicGamesLauncherService.exe"
+    annotation: "Epic Games Launcher service"
+    annotation_en: "Epic Games Launcher service"
+    category: vendor
+    severity: info
+
+  - id: game_battlenet
+    priority: 140
+    match:
+      name_equals: "Battle.net.exe"
+    annotation: "Battle.net launcher"
+    annotation_en: "Battle.net launcher"
+    category: worker
+    severity: info
+
+  - id: game_battlenet_agent
+    priority: 145
+    match:
+      name_equals: "Agent.exe"
+      path_contains: "Blizzard"
+    annotation: "Blizzard Update Agent"
+    annotation_en: "Blizzard Update Agent"
+    category: updater
+    severity: info
+
+  - id: game_battlenet_service
+    priority: 135
+    match:
+      name_equals: "Battle.net Service.exe"
+    annotation: "Battle.net service"
+    annotation_en: "Battle.net service"
+    category: vendor
+    severity: info
+
+  - id: game_ea_desktop
+    priority: 140
+    match:
+      name_equals: "EADesktop.exe"
+    annotation: "EA app / EA Desktop"
+    annotation_en: "EA app / EA Desktop"
+    category: worker
+    severity: info
+
+  - id: game_ea_service
+    priority: 135
+    match:
+      name_equals: "EAService.exe"
+    annotation: "EA service"
+    annotation_en: "EA service"
+    category: vendor
+    severity: info
+
+  - id: game_ea_background
+    priority: 135
+    match:
+      name_equals: "EABackgroundService.exe"
+    annotation: "EA background service"
+    annotation_en: "EA background service"
+    category: vendor
+    severity: info
+
+  - id: game_ea_connect
+    priority: 135
+    match:
+      name_equals: "EAConnect_microsoft.exe"
+    annotation: "EA Connect component"
+    annotation_en: "EA Connect component"
+    category: vendor
+    severity: info
+
+  - id: game_ubisoft_connect
+    priority: 140
+    match:
+      name_equals: "UbisoftConnect.exe"
+    annotation: "Ubisoft Connect"
+    annotation_en: "Ubisoft Connect"
+    category: worker
+    severity: info
+
+  - id: game_ubisoft_launcher
+    priority: 140
+    match:
+      name_equals: "UbisoftGameLauncher.exe"
+    annotation: "Ubisoft game launcher component"
+    annotation_en: "Ubisoft game launcher component"
+    category: worker
+    severity: info
+
+  - id: game_ubisoft_service
+    priority: 135
+    match:
+      name_equals: "UbisoftConnectService.exe"
+    annotation: "Ubisoft Connect service"
+    annotation_en: "Ubisoft Connect service"
+    category: vendor
+    severity: info
+
+  - id: game_gog_galaxy
+    priority: 135
+    match:
+      path_contains: "GOG Galaxy"
+    annotation: "GOG Galaxy component"
+    annotation_en: "GOG Galaxy component"
+    category: worker
+    severity: info
+
+  - id: game_riot_client
+    priority: 140
+    match:
+      name_equals: "RiotClientServices.exe"
+    annotation: "Riot Client Services"
+    annotation_en: "Riot Client Services"
+    category: worker
+    severity: info
+
+  - id: game_league_client
+    priority: 140
+    match:
+      name_equals: "LeagueClient.exe"
+    annotation: "League of Legends client"
+    annotation_en: "League of Legends client"
+    category: worker
+    severity: info
+
+  - id: game_valorant
+    priority: 140
+    match:
+      name_equals: "VALORANT.exe"
+    annotation: "VALORANT game client"
+    annotation_en: "VALORANT game client"
+    category: worker
+    severity: info
+
+  - id: game_vanguard_tray
+    priority: 150
+    match:
+      name_equals: "vgtray.exe"
+    annotation: "Riot Vanguard tray icon (anti-cheat)"
+    annotation_en: "Riot Vanguard tray icon (anti-cheat)"
+    category: vendor
+    severity: info
+
+  - id: game_vanguard_service
+    priority: 150
+    match:
+      name_equals: "vgc.exe"
+    annotation: "Riot Vanguard service (anti-cheat)"
+    annotation_en: "Riot Vanguard service (anti-cheat)"
+    category: vendor
+    severity: info
+
+  - id: game_easyanticheat
+    priority: 150
+    match:
+      name_equals: "EasyAntiCheat.exe"
+    annotation: "Easy Anti-Cheat"
+    annotation_en: "Easy Anti-Cheat"
+    category: vendor
+    severity: info
+
+  - id: game_easyanticheat_eos
+    priority: 150
+    match:
+      name_equals: "EasyAntiCheat_EOS.exe"
+    annotation: "Easy Anti-Cheat EOS component"
+    annotation_en: "Easy Anti-Cheat EOS component"
+    category: vendor
+    severity: info
+
+  - id: game_battleye_service
+    priority: 150
+    match:
+      name_equals: "BEService.exe"
+    annotation: "BattlEye service"
+    annotation_en: "BattlEye service"
+    category: vendor
+    severity: info
+
+  - id: game_battleye_service_x64
+    priority: 150
+    match:
+      name_equals: "BEService_x64.exe"
+    annotation: "BattlEye service (64-bit)"
+    annotation_en: "BattlEye service (64-bit)"
+    category: vendor
+    severity: info
+
+  - id: game_faceit_client
+    priority: 145
+    match:
+      name_equals: "FACEITClient.exe"
+    annotation: "FACEIT client"
+    annotation_en: "FACEIT client"
+    category: vendor
+    severity: info
+
+  - id: game_faceit_service
+    priority: 145
+    match:
+      name_equals: "FACEITService.exe"
+    annotation: "FACEIT service"
+    annotation_en: "FACEIT service"
+    category: vendor
+    severity: info
+
+  - id: game_punkbuster_a
+    priority: 145
+    match:
+      name_equals: "PnkBstrA.exe"
+    annotation: "PunkBuster service A"
+    annotation_en: "PunkBuster service A"
+    category: vendor
+    severity: info
+
+  - id: game_punkbuster_b
+    priority: 145
+    match:
+      name_equals: "PnkBstrB.exe"
+    annotation: "PunkBuster service B"
+    annotation_en: "PunkBuster service B"
+    category: vendor
+    severity: info
+
+  - id: game_overwolf
+    priority: 140
+    match:
+      name_equals: "Overwolf.exe"
+    annotation: "Overwolf platform"
+    annotation_en: "Overwolf platform"
+    category: worker
+    severity: info
+
+  - id: game_overwolf_browser
+    priority: 150
+    match:
+      name_equals: "OverwolfBrowser.exe"
+    annotation: "Overwolf browser helper"
+    annotation_en: "Overwolf browser helper"
+    category: browser_worker
+    severity: info
+
+  - id: game_msi_afterburner
+    priority: 135
+    match:
+      name_equals: "MSIAfterburner.exe"
+    annotation: "MSI Afterburner (разгон/мониторинг GPU)"
+    annotation_en: "MSI Afterburner (GPU overclock/monitoring)"
+    category: vendor
+    severity: info
+
+  - id: game_rtss
+    priority: 135
+    match:
+      name_equals: "RTSS.exe"
+    annotation: "RivaTuner Statistics Server (FPS overlay)"
+    annotation_en: "RivaTuner Statistics Server (FPS overlay)"
+    category: vendor
+    severity: info
+
+  - id: game_fraps
+    priority: 130
+    match:
+      name_equals: "fraps.exe"
+    annotation: "Fraps (FPS capture/recording)"
+    annotation_en: "Fraps (FPS capture/recording)"
+    category: worker
+    severity: info
+
+  - id: game_geforce_now
+    priority: 135
+    match:
+      name_equals: "GeForceNOW.exe"
+    annotation: "NVIDIA GeForce NOW"
+    annotation_en: "NVIDIA GeForce NOW"
+    category: vendor
+    severity: info
+
+  - id: game_itch
+    priority: 130
+    match:
+      name_equals: "itch.exe"
+    annotation: "itch.io app"
+    annotation_en: "itch.io app"
+    category: worker
+    severity: info
+
+  - id: gpu_intel_igfx
+    priority: 135
+    match:
+      name_equals: "igfxCUIService.exe"
+    annotation: "Intel graphics control service"
+    annotation_en: "Intel graphics control service"
+    category: vendor
+    severity: info
+
+  - id: gpu_intel_cph
+    priority: 135
+    match:
+      name_equals: "IntelCpHeciSvc.exe"
+    annotation: "Intel graphics HECI service"
+    annotation_en: "Intel graphics HECI service"
+    category: vendor
+    severity: info
+
+  - id: gpu_intel_dsa
+    priority: 135
+    match:
+      name_equals: "DSAService.exe"
+    annotation: "Intel Driver & Support Assistant service"
+    annotation_en: "Intel Driver & Support Assistant service"
+    category: updater
+    severity: info
+
+  - id: gpu_nvidia_backend
+    priority: 140
+    match:
+      name_equals: "NvBackend.exe"
+    annotation: "NVIDIA Update Core / GeForce Experience backend"
+    annotation_en: "NVIDIA Update Core / GeForce Experience backend"
+    category: vendor
+    severity: info
+
+  - id: gpu_nvidia_telemetry
+    priority: 160
+    match:
+      name_equals: "NvTelemetryContainer.exe"
+    annotation: "NVIDIA telemetry container"
+    annotation_en: "NVIDIA telemetry container"
+    category: telemetry
+    severity: info
+
+  - id: gpu_nvidia_geforce_experience
+    priority: 135
+    match:
+      name_contains: "GeForce Experience"
+    annotation: "NVIDIA GeForce Experience component"
+    annotation_en: "NVIDIA GeForce Experience component"
+    category: vendor
+    severity: info
+
+  - id: gpu_amd_install_assistant
+    priority: 140
+    match:
+      name_equals: "AMDInstallAssistant.exe"
+    annotation: "AMD Install Assistant / updater"
+    annotation_en: "AMD Install Assistant / updater"
+    category: updater
+    severity: info
+
+  - id: gpu_amd_software_update
+    priority: 140
+    match:
+      name_equals: "AMDSoftwareUpdate.exe"
+    annotation: "AMD Software Update"
+    annotation_en: "AMD Software Update"
+    category: updater
+    severity: info
+
+  - id: oem_msi_dragon
+    priority: 130
+    match:
+      name_equals: "DragonCenter.exe"
+    annotation: "MSI Dragon Center"
+    annotation_en: "MSI Dragon Center"
+    category: vendor
+    severity: info
+
+  - id: oem_asus_armoury
+    priority: 130
+    match:
+      name_equals: "ArmouryCrate.exe"
+    annotation: "ASUS Armoury Crate"
+    annotation_en: "ASUS Armoury Crate"
+    category: vendor
+    severity: info
+
+  - id: oem_asus_update
+    priority: 130
+    match:
+      name_equals: "ASUSUpdateCheck.exe"
+    annotation: "ASUS Update Check"
+    annotation_en: "ASUS Update Check"
+    category: updater
+    severity: info
+
+  - id: oem_dell_supportassist
+    priority: 130
+    match:
+      name_equals: "SupportAssistAgent.exe"
+    annotation: "Dell SupportAssist agent"
+    annotation_en: "Dell SupportAssist agent"
+    category: vendor
+    severity: info
+
+  - id: oem_lenovo_vantage
+    priority: 130
+    match:
+      name_equals: "LenovoVantage.exe"
+    annotation: "Lenovo Vantage"
+    annotation_en: "Lenovo Vantage"
+    category: vendor
+    severity: info
+
+  - id: oem_hp_support
+    priority: 130
+    match:
+      name_equals: "HPSysInfo.exe"
+    annotation: "HP Support Assistant component"
+    annotation_en: "HP Support Assistant component"
+    category: vendor
+    severity: info
+
+  - id: oem_samsung_magician
+    priority: 125
+    match:
+      name_equals: "SamsungMagician.exe"
+    annotation: "Samsung Magician (SSD utility)"
+    annotation_en: "Samsung Magician (SSD utility)"
+    category: vendor
+    severity: info
+
+  - id: oem_nzxt_cam
+    priority: 125
+    match:
+      name_equals: "NZXT CAM.exe"
+    annotation: "NZXT CAM"
+    annotation_en: "NZXT CAM"
+    category: vendor
+    severity: info
+
+  - id: oem_steelseries_gg
+    priority: 125
+    match:
+      name_equals: "SteelSeriesGG.exe"
+    annotation: "SteelSeries GG"
+    annotation_en: "SteelSeries GG"
+    category: vendor
+    severity: info
+
+  - id: oem_razer_central
+    priority: 125
+    match:
+      name_equals: "RazerCentral.exe"
+    annotation: "Razer Central"
+    annotation_en: "Razer Central"
+    category: vendor
+    severity: info
+
+  - id: oem_logitech_lcore
+    priority: 125
+    match:
+      name_equals: "LCore.exe"
+    annotation: "Logitech Core service"
+    annotation_en: "Logitech Core service"
+    category: vendor
+    severity: info
+
+  - id: oem_wacom
+    priority: 125
+    match:
+      name_equals: "WacomDesktopCenter.exe"
+    annotation: "Wacom Desktop Center"
+    annotation_en: "Wacom Desktop Center"
+    category: vendor
+    severity: info
+
+  - id: oem_elgato_streamdeck
+    priority: 125
+    match:
+      name_equals: "ElgatoStreamDeck.exe"
+    annotation: "Elgato Stream Deck"
+    annotation_en: "Elgato Stream Deck"
+    category: vendor
+    severity: info
+
+  - id: oem_openrgb
+    priority: 120
+    match:
+      name_equals: "OpenRGB.exe"
+    annotation: "OpenRGB (RGB control)"
+    annotation_en: "OpenRGB (RGB control)"
+    category: worker
+    severity: info
+
+  - id: oem_fancontrol
+    priority: 120
+    match:
+      name_equals: "FanControl.exe"
+    annotation: "Fan Control (управление вентиляторами)"
+    annotation_en: "Fan Control (fan control utility)"
+    category: worker
+    severity: info
+
+  - id: oem_hwinfo64
+    priority: 125
+    match:
+      name_equals: "HWiNFO64.exe"
+    annotation: "HWiNFO64 (мониторинг оборудования)"
+    annotation_en: "HWiNFO64 (hardware monitoring)"
+    category: worker
+    severity: info
+
+  - id: oem_cpuz
+    priority: 120
+    match:
+      name_equals: "cpuz.exe"
+    annotation: "CPU-Z"
+    annotation_en: "CPU-Z"
+    category: worker
+    severity: info
+
+  - id: oem_gpuz
+    priority: 120
+    match:
+      name_equals: "GPU-Z.exe"
+    annotation: "GPU-Z"
+    annotation_en: "GPU-Z"
+    category: worker
+    severity: info
+
+  - id: oem_aida64
+    priority: 120
+    match:
+      name_equals: "AIDA64.exe"
+    annotation: "AIDA64"
+    annotation_en: "AIDA64"
+    category: worker
+    severity: info
+
+  - id: oem_coretemp
+    priority: 120
+    match:
+      name_equals: "CoreTemp.exe"
+    annotation: "Core Temp"
+    annotation_en: "Core Temp"
+    category: worker
+    severity: info
+
+  - id: oem_crystaldiskinfo
+    priority: 120
+    match:
+      name_equals: "DiskInfo64.exe"
+    annotation: "CrystalDiskInfo"
+    annotation_en: "CrystalDiskInfo"
+    category: worker
+    severity: info
+
+  - id: oem_userbenchmark
+    priority: 120
+    match:
+      name_equals: "UserBenchMark.exe"
+    annotation: "UserBenchmark"
+    annotation_en: "UserBenchmark"
+    category: worker
+    severity: info
+
+  - id: oem_cinebench
+    priority: 120
+    match:
+      name_equals: "Cinebench.exe"
+    annotation: "Cinebench benchmark"
+    annotation_en: "Cinebench benchmark"
+    category: worker
+    severity: info
+
+  - id: oem_3dmark
+    priority: 120
+    match:
+      name_equals: "3DMark.exe"
+    annotation: "3DMark benchmark"
+    annotation_en: "3DMark benchmark"
+    category: worker
+    severity: info
+
+  - id: virt_docker_desktop
+    priority: 135
+    match:
+      name_equals: "Docker Desktop.exe"
+    annotation: "Docker Desktop"
+    annotation_en: "Docker Desktop"
+    category: worker
+    severity: info
+
+  - id: virt_docker_backend
+    priority: 135
+    match:
+      name_equals: "com.docker.backend.exe"
+    annotation: "Docker Desktop backend"
+    annotation_en: "Docker Desktop backend"
+    category: worker
+    severity: info
+
+  - id: virt_docker_engine
+    priority: 135
+    match:
+      name_equals: "DockerEngine.exe"
+    annotation: "Docker Engine component"
+    annotation_en: "Docker Engine component"
+    category: worker
+    severity: info
+
+  - id: virt_dockerd
+    priority: 135
+    match:
+      name_equals: "dockerd.exe"
+    annotation: "Docker daemon"
+    annotation_en: "Docker daemon"
+    category: worker
+    severity: info
+
+  - id: virt_containerd
+    priority: 135
+    match:
+      name_equals: "containerd.exe"
+    annotation: "containerd runtime"
+    annotation_en: "containerd runtime"
+    category: worker
+    severity: info
+
+  - id: virt_wsl
+    priority: 130
+    match:
+      name_equals: "wsl.exe"
+    annotation: "Windows Subsystem for Linux CLI"
+    annotation_en: "Windows Subsystem for Linux CLI"
+    category: system
+    severity: info
+
+  - id: virt_wslhost
+    priority: 130
+    match:
+      name_equals: "WslHost.exe"
+    annotation: "WSL host process"
+    annotation_en: "WSL host process"
+    category: system
+    severity: info
+
+  - id: virt_virtualbox
+    priority: 130
+    match:
+      name_equals: "VirtualBox.exe"
+    annotation: "Oracle VirtualBox"
+    annotation_en: "Oracle VirtualBox"
+    category: worker
+    severity: info
+
+  - id: virt_virtualboxvm
+    priority: 130
+    match:
+      name_equals: "VirtualBoxVM.exe"
+    annotation: "VirtualBox VM process"
+    annotation_en: "VirtualBox VM process"
+    category: worker
+    severity: info
+
+  - id: virt_vboxsvc
+    priority: 130
+    match:
+      name_equals: "VBoxSVC.exe"
+    annotation: "VirtualBox service"
+    annotation_en: "VirtualBox service"
+    category: worker
+    severity: info
+
+  - id: virt_vmware
+    priority: 130
+    match:
+      name_equals: "vmware.exe"
+    annotation: "VMware Workstation"
+    annotation_en: "VMware Workstation"
+    category: worker
+    severity: info
+
+  - id: virt_vmware_vmx
+    priority: 130
+    match:
+      name_equals: "vmware-vmx.exe"
+    annotation: "VMware VM process"
+    annotation_en: "VMware VM process"
+    category: worker
+    severity: info
+
+  - id: virt_hyperv_vmwp
+    priority: 130
+    match:
+      name_equals: "vmwp.exe"
+    annotation: "Hyper-V Virtual Machine Worker Process"
+    annotation_en: "Hyper-V Virtual Machine Worker Process"
+    category: system
+    severity: info
+
+  - id: virt_qemu
+    priority: 130
+    match:
+      name_equals: "qemu-system-x86_64.exe"
+    annotation: "QEMU emulator"
+    annotation_en: "QEMU emulator"
+    category: worker
+    severity: info
+
+  - id: virt_android_emulator
+    priority: 130
+    match:
+      name_equals: "emulator.exe"
+    annotation: "Android emulator"
+    annotation_en: "Android emulator"
+    category: worker
+    severity: info
+
+  - id: virt_bluestacks
+    priority: 130
+    match:
+      name_equals: "HD-Player.exe"
+    annotation: "BlueStacks Android emulator"
+    annotation_en: "BlueStacks Android emulator"
+    category: worker
+    severity: info
+
+  - id: virt_nox
+    priority: 130
+    match:
+      name_equals: "NoxVMHandle.exe"
+    annotation: "Nox Android emulator"
+    annotation_en: "Nox Android emulator"
+    category: worker
+    severity: info
+
+  - id: virt_ldplayer
+    priority: 130
+    match:
+      name_equals: "dnplayer.exe"
+    annotation: "LDPlayer Android emulator"
+    annotation_en: "LDPlayer Android emulator"
+    category: worker
+    severity: info
+
+  - id: virt_podman
+    priority: 125
+    match:
+      name_equals: "podman.exe"
+    annotation: "Podman CLI"
+    annotation_en: "Podman CLI"
+    category: worker
+    severity: info
+
+  - id: virt_rancher
+    priority: 125
+    match:
+      name_equals: "Rancher Desktop.exe"
+    annotation: "Rancher Desktop"
+    annotation_en: "Rancher Desktop"
+    category: worker
+    severity: info
+
+  - id: dev_java
+    priority: 120
+    match:
+      name_equals: "java.exe"
+    annotation: "Java runtime"
+    annotation_en: "Java runtime"
+    category: worker
+    severity: info
+
+  - id: dev_javaw
+    priority: 120
+    match:
+      name_equals: "javaw.exe"
+    annotation: "Java runtime (windowless)"
+    annotation_en: "Java runtime (windowless)"
+    category: worker
+    severity: info
+
+  - id: dev_dotnet
+    priority: 120
+    match:
+      name_equals: "dotnet.exe"
+    annotation: ".NET CLI/runtime host"
+    annotation_en: ".NET CLI/runtime host"
+    category: worker
+    severity: info
+
+  - id: dev_msbuild
+    priority: 120
+    match:
+      name_equals: "MSBuild.exe"
+    annotation: "Microsoft Build Engine"
+    annotation_en: "Microsoft Build Engine"
+    category: worker
+    severity: info
+
+  - id: dev_devenv
+    priority: 125
+    match:
+      name_equals: "devenv.exe"
+    annotation: "Visual Studio IDE"
+    annotation_en: "Visual Studio IDE"
+    category: worker
+    severity: info
+
+  - id: dev_sublime
+    priority: 120
+    match:
+      name_equals: "sublime_text.exe"
+    annotation: "Sublime Text"
+    annotation_en: "Sublime Text"
+    category: worker
+    severity: info
+
+  - id: dev_atom
+    priority: 120
+    match:
+      name_equals: "atom.exe"
+    annotation: "Atom editor"
+    annotation_en: "Atom editor"
+    category: worker
+    severity: info
+
+  - id: dev_eclipse
+    priority: 120
+    match:
+      name_equals: "eclipse.exe"
+    annotation: "Eclipse IDE"
+    annotation_en: "Eclipse IDE"
+    category: worker
+    severity: info
+
+  - id: dev_androidstudio
+    priority: 125
+    match:
+      name_equals: "androidstudio64.exe"
+    annotation: "Android Studio"
+    annotation_en: "Android Studio"
+    category: worker
+    severity: info
+
+  - id: dev_rider
+    priority: 120
+    match:
+      name_equals: "rider64.exe"
+    annotation: "JetBrains Rider"
+    annotation_en: "JetBrains Rider"
+    category: worker
+    severity: info
+
+  - id: dev_idea
+    priority: 120
+    match:
+      name_equals: "idea64.exe"
+    annotation: "JetBrains IntelliJ IDEA"
+    annotation_en: "JetBrains IntelliJ IDEA"
+    category: worker
+    severity: info
+
+  - id: dev_pycharm
+    priority: 120
+    match:
+      name_equals: "pycharm64.exe"
+    annotation: "JetBrains PyCharm"
+    annotation_en: "JetBrains PyCharm"
+    category: worker
+    severity: info
+
+  - id: dev_webstorm
+    priority: 120
+    match:
+      name_equals: "webstorm64.exe"
+    annotation: "JetBrains WebStorm"
+    annotation_en: "JetBrains WebStorm"
+    category: worker
+    severity: info
+
+  - id: dev_clion
+    priority: 120
+    match:
+      name_equals: "clion64.exe"
+    annotation: "JetBrains CLion"
+    annotation_en: "JetBrains CLion"
+    category: worker
+    severity: info
+
+  - id: dev_goland
+    priority: 120
+    match:
+      name_equals: "goland64.exe"
+    annotation: "JetBrains GoLand"
+    annotation_en: "JetBrains GoLand"
+    category: worker
+    severity: info
+
+  - id: dev_phpstorm
+    priority: 120
+    match:
+      name_equals: "phpstorm64.exe"
+    annotation: "JetBrains PhpStorm"
+    annotation_en: "JetBrains PhpStorm"
+    category: worker
+    severity: info
+
+  - id: dev_jetbrains_toolbox
+    priority: 125
+    match:
+      name_equals: "jetbrains-toolbox.exe"
+    annotation: "JetBrains Toolbox"
+    annotation_en: "JetBrains Toolbox"
+    category: worker
+    severity: info
+
+  - id: dev_gradle_daemon
+    priority: 135
+    match:
+      name_equals: "java.exe"
+      cmdline_contains: "GradleDaemon"
+    annotation: "Gradle daemon (Java build system)"
+    annotation_en: "Gradle daemon (Java build system)"
+    category: worker
+    severity: info
+
+  - id: dev_adb
+    priority: 125
+    match:
+      name_equals: "adb.exe"
+    annotation: "Android Debug Bridge"
+    annotation_en: "Android Debug Bridge"
+    category: worker
+    severity: info
+
+  - id: dev_scrcpy
+    priority: 125
+    match:
+      name_equals: "scrcpy.exe"
+    annotation: "scrcpy (Android screen mirror)"
+    annotation_en: "scrcpy (Android screen mirror)"
+    category: worker
+    severity: info
+
+  - id: dev_git
+    priority: 110
+    match:
+      name_equals: "git.exe"
+    annotation: "Git"
+    annotation_en: "Git"
+    category: worker
+    severity: info
+
+  - id: dev_git_bash
+    priority: 110
+    match:
+      name_equals: "git-bash.exe"
+    annotation: "Git Bash"
+    annotation_en: "Git Bash"
+    category: worker
+    severity: info
+
+  - id: dev_github_desktop
+    priority: 120
+    match:
+      name_equals: "GitHubDesktop.exe"
+    annotation: "GitHub Desktop"
+    annotation_en: "GitHub Desktop"
+    category: worker
+    severity: info
+
+  - id: dev_gitkraken
+    priority: 120
+    match:
+      name_equals: "gitkraken.exe"
+    annotation: "GitKraken"
+    annotation_en: "GitKraken"
+    category: worker
+    severity: info
+
+  - id: dev_sourcetree
+    priority: 120
+    match:
+      name_equals: "SourceTree.exe"
+    annotation: "Atlassian SourceTree"
+    annotation_en: "Atlassian SourceTree"
+    category: worker
+    severity: info
+
+  - id: dev_ruby
+    priority: 110
+    match:
+      name_equals: "ruby.exe"
+    annotation: "Ruby interpreter"
+    annotation_en: "Ruby interpreter"
+    category: worker
+    severity: info
+
+  - id: dev_php
+    priority: 110
+    match:
+      name_equals: "php.exe"
+    annotation: "PHP interpreter"
+    annotation_en: "PHP interpreter"
+    category: worker
+    severity: info
+
+  - id: dev_perl
+    priority: 110
+    match:
+      name_equals: "perl.exe"
+    annotation: "Perl interpreter"
+    annotation_en: "Perl interpreter"
+    category: worker
+    severity: info
+
+  - id: dev_cargo
+    priority: 110
+    match:
+      name_equals: "cargo.exe"
+    annotation: "Rust Cargo package manager"
+    annotation_en: "Rust Cargo package manager"
+    category: worker
+    severity: info
+
+  - id: dev_conda
+    priority: 110
+    match:
+      name_equals: "conda.exe"
+    annotation: "Conda package manager"
+    annotation_en: "Conda package manager"
+    category: worker
+    severity: info
+
+  - id: dev_jupyter
+    priority: 110
+    match:
+      name_equals: "jupyter.exe"
+    annotation: "Jupyter"
+    annotation_en: "Jupyter"
+    category: worker
+    severity: info
+
+  - id: dev_kubectl
+    priority: 120
+    match:
+      name_equals: "kubectl.exe"
+    annotation: "Kubernetes CLI"
+    annotation_en: "Kubernetes CLI"
+    category: worker
+    severity: info
+
+  - id: dev_terraform
+    priority: 115
+    match:
+      name_equals: "terraform.exe"
+    annotation: "Terraform CLI"
+    annotation_en: "Terraform CLI"
+    category: worker
+    severity: info
+
+  - id: db_mysqld
+    priority: 130
+    match:
+      name_equals: "mysqld.exe"
+    annotation: "MySQL server"
+    annotation_en: "MySQL server"
+    category: worker
+    severity: info
+
+  - id: db_mariadb
+    priority: 130
+    match:
+      name_equals: "mariadbd.exe"
+    annotation: "MariaDB server"
+    annotation_en: "MariaDB server"
+    category: worker
+    severity: info
+
+  - id: db_postgres
+    priority: 130
+    match:
+      name_equals: "postgres.exe"
+    annotation: "PostgreSQL server"
+    annotation_en: "PostgreSQL server"
+    category: worker
+    severity: info
+
+  - id: db_sqlservr
+    priority: 130
+    match:
+      name_equals: "sqlservr.exe"
+    annotation: "Microsoft SQL Server"
+    annotation_en: "Microsoft SQL Server"
+    category: worker
+    severity: info
+
+  - id: db_sqlagent
+    priority: 130
+    match:
+      name_equals: "SQLAGENT.EXE"
+    annotation: "SQL Server Agent"
+    annotation_en: "SQL Server Agent"
+    category: worker
+    severity: info
+
+  - id: db_mongod
+    priority: 130
+    match:
+      name_equals: "mongod.exe"
+    annotation: "MongoDB server"
+    annotation_en: "MongoDB server"
+    category: worker
+    severity: info
+
+  - id: db_redis
+    priority: 130
+    match:
+      name_equals: "redis-server.exe"
+    annotation: "Redis server"
+    annotation_en: "Redis server"
+    category: worker
+    severity: info
+
+  - id: db_elasticsearch
+    priority: 130
+    match:
+      name_equals: "elasticsearch.exe"
+    annotation: "Elasticsearch"
+    annotation_en: "Elasticsearch"
+    category: worker
+    severity: info
+
+  - id: db_influxd
+    priority: 130
+    match:
+      name_equals: "influxd.exe"
+    annotation: "InfluxDB server"
+    annotation_en: "InfluxDB server"
+    category: worker
+    severity: info
+
+  - id: db_prometheus
+    priority: 130
+    match:
+      name_equals: "prometheus.exe"
+    annotation: "Prometheus monitoring"
+    annotation_en: "Prometheus monitoring"
+    category: worker
+    severity: info
+
+  - id: db_grafana
+    priority: 130
+    match:
+      name_equals: "grafana-server.exe"
+    annotation: "Grafana server"
+    annotation_en: "Grafana server"
+    category: worker
+    severity: info
+
+  - id: db_nginx
+    priority: 130
+    match:
+      name_equals: "nginx.exe"
+    annotation: "NGINX web server"
+    annotation_en: "NGINX web server"
+    category: worker
+    severity: info
+
+  - id: db_caddy
+    priority: 130
+    match:
+      name_equals: "caddy.exe"
+    annotation: "Caddy web server"
+    annotation_en: "Caddy web server"
+    category: worker
+    severity: info
+
+  - id: db_httpd
+    priority: 130
+    match:
+      name_equals: "httpd.exe"
+    annotation: "Apache HTTP server"
+    annotation_en: "Apache HTTP server"
+    category: worker
+    severity: info
+
+  - id: db_iis_w3wp
+    priority: 130
+    match:
+      name_equals: "w3wp.exe"
+    annotation: "IIS worker process"
+    annotation_en: "IIS worker process"
+    category: system
+    severity: info
+
+  - id: db_iis_express
+    priority: 130
+    match:
+      name_equals: "iisexpress.exe"
+    annotation: "IIS Express"
+    annotation_en: "IIS Express"
+    category: worker
+    severity: info
+
+  - id: db_xampp
+    priority: 120
+    match:
+      name_equals: "xampp-control.exe"
+    annotation: "XAMPP Control Panel"
+    annotation_en: "XAMPP Control Panel"
+    category: worker
+    severity: info
+
+  - id: remote_teamviewer
+    priority: 140
+    match:
+      name_equals: "TeamViewer.exe"
+    annotation: "TeamViewer (удалённый доступ)"
+    annotation_en: "TeamViewer (remote access)"
+    category: worker
+    severity: info
+    actions:
+      - "Если вы не устанавливали TeamViewer — стоит проверить автозагрузку и службы"
+
+  - id: remote_teamviewer_service
+    priority: 140
+    match:
+      name_equals: "TeamViewer_Service.exe"
+    annotation: "TeamViewer service"
+    annotation_en: "TeamViewer service"
+    category: worker
+    severity: info
+
+  - id: remote_anydesk
+    priority: 140
+    match:
+      name_equals: "AnyDesk.exe"
+    annotation: "AnyDesk (удалённый доступ)"
+    annotation_en: "AnyDesk (remote access)"
+    category: worker
+    severity: info
+    actions:
+      - "Если AnyDesk не нужен — удалите или отключите службу"
+
+  - id: remote_anydesk_service
+    priority: 140
+    match:
+      name_equals: "adsvc.exe"
+    annotation: "AnyDesk service"
+    annotation_en: "AnyDesk service"
+    category: worker
+    severity: info
+
+  - id: remote_mstsc
+    priority: 130
+    match:
+      name_equals: "mstsc.exe"
+    annotation: "Remote Desktop Connection client"
+    annotation_en: "Remote Desktop Connection client"
+    category: system
+    severity: info
+
+  - id: remote_rustdesk
+    priority: 135
+    match:
+      name_equals: "RustDesk.exe"
+    annotation: "RustDesk (open-source remote access)"
+    annotation_en: "RustDesk (open-source remote access)"
+    category: worker
+    severity: info
+
+  - id: remote_parsec
+    priority: 135
+    match:
+      name_equals: "Parsec.exe"
+    annotation: "Parsec (remote desktop/game streaming)"
+    annotation_en: "Parsec (remote desktop/game streaming)"
+    category: worker
+    severity: info
+
+  - id: remote_sunshine
+    priority: 135
+    match:
+      name_equals: "Sunshine.exe"
+    annotation: "Sunshine game streaming host"
+    annotation_en: "Sunshine game streaming host"
+    category: worker
+    severity: info
+
+  - id: remote_moonlight
+    priority: 135
+    match:
+      name_equals: "Moonlight.exe"
+    annotation: "Moonlight game streaming client"
+    annotation_en: "Moonlight game streaming client"
+    category: worker
+    severity: info
+
+  - id: remote_vnc_viewer
+    priority: 135
+    match:
+      name_equals: "vncviewer.exe"
+    annotation: "VNC viewer"
+    annotation_en: "VNC viewer"
+    category: worker
+    severity: info
+
+  - id: remote_tightvnc
+    priority: 135
+    match:
+      name_equals: "tvnserver.exe"
+    annotation: "TightVNC server"
+    annotation_en: "TightVNC server"
+    category: worker
+    severity: info
+
+  - id: remote_logmein
+    priority: 135
+    match:
+      name_equals: "LogMeIn.exe"
+    annotation: "LogMeIn remote access"
+    annotation_en: "LogMeIn remote access"
+    category: worker
+    severity: info
+
+  - id: remote_screenconnect
+    priority: 135
+    match:
+      name_equals: "ScreenConnect.ClientService.exe"
+    annotation: "ConnectWise Control / ScreenConnect agent"
+    annotation_en: "ConnectWise Control / ScreenConnect agent"
+    category: worker
+    severity: info
+
+  - id: remote_ultraviewer
+    priority: 135
+    match:
+      name_equals: "UltraViewer.exe"
+    annotation: "UltraViewer remote access"
+    annotation_en: "UltraViewer remote access"
+    category: worker
+    severity: info
+
+  - id: remote_supremo
+    priority: 135
+    match:
+      name_equals: "Supremo.exe"
+    annotation: "Supremo remote desktop"
+    annotation_en: "Supremo remote desktop"
+    category: worker
+    severity: info
+
+  - id: remote_ammyy
+    priority: 140
+    match:
+      name_equals: "AA_v3.exe"
+    annotation: "Ammyy Admin remote access (часто используется техподдержкой)"
+    annotation_en: "Ammyy Admin remote access (often used by support)"
+    category: worker
+    severity: info
+    actions:
+      - "Если вы не запускали удалённый сеанс — завершите процесс и проверьте систему"
+
+  - id: vpn_tailscale
+    priority: 135
+    match:
+      name_equals: "Tailscale.exe"
+    annotation: "Tailscale VPN client"
+    annotation_en: "Tailscale VPN client"
+    category: worker
+    severity: info
+
+  - id: vpn_zerotier
+    priority: 135
+    match:
+      name_equals: "ZeroTier One.exe"
+    annotation: "ZeroTier One client"
+    annotation_en: "ZeroTier One client"
+    category: worker
+    severity: info
+
+  - id: vpn_nordvpn
+    priority: 135
+    match:
+      name_equals: "NordVPN.exe"
+    annotation: "NordVPN client"
+    annotation_en: "NordVPN client"
+    category: worker
+    severity: info
+
+  - id: vpn_protonvpn
+    priority: 135
+    match:
+      name_equals: "ProtonVPN.exe"
+    annotation: "ProtonVPN client"
+    annotation_en: "ProtonVPN client"
+    category: worker
+    severity: info
+
+  - id: vpn_surfshark
+    priority: 135
+    match:
+      name_equals: "Surfshark.exe"
+    annotation: "Surfshark VPN client"
+    annotation_en: "Surfshark VPN client"
+    category: worker
+    severity: info
+
+  - id: vpn_expressvpn
+    priority: 135
+    match:
+      name_equals: "ExpressVPN.exe"
+    annotation: "ExpressVPN client"
+    annotation_en: "ExpressVPN client"
+    category: worker
+    severity: info
+
+  - id: vpn_cyberghost
+    priority: 135
+    match:
+      name_equals: "CyberGhost.exe"
+    annotation: "CyberGhost VPN client"
+    annotation_en: "CyberGhost VPN client"
+    category: worker
+    severity: info
+
+  - id: vpn_wireguard
+    priority: 135
+    match:
+      name_equals: "wireguard.exe"
+    annotation: "WireGuard client"
+    annotation_en: "WireGuard client"
+    category: worker
+    severity: info
+
+  - id: vpn_openvpn_gui
+    priority: 135
+    match:
+      name_equals: "openvpn-gui.exe"
+    annotation: "OpenVPN GUI"
+    annotation_en: "OpenVPN GUI"
+    category: worker
+    severity: info
+
+  - id: vpn_forticlient
+    priority: 135
+    match:
+      name_equals: "FortiClient.exe"
+    annotation: "FortiClient VPN/security"
+    annotation_en: "FortiClient VPN/security"
+    category: worker
+    severity: info
+
+  - id: vpn_cisco_anyconnect
+    priority: 135
+    match:
+      name_equals: "vpnui.exe"
+    annotation: "Cisco AnyConnect VPN UI"
+    annotation_en: "Cisco AnyConnect VPN UI"
+    category: worker
+    severity: info
+
+  - id: vpn_globalprotect
+    priority: 135
+    match:
+      name_equals: "PanGPS.exe"
+    annotation: "Palo Alto Global Protect"
+    annotation_en: "Palo Alto Global Protect"
+    category: worker
+    severity: info
+
+  - id: vpn_shadowsocks
+    priority: 130
+    match:
+      name_equals: "shadowsocks.exe"
+    annotation: "Shadowsocks proxy client"
+    annotation_en: "Shadowsocks proxy client"
+    category: worker
+    severity: info
+
+  - id: vpn_v2rayn
+    priority: 130
+    match:
+      name_equals: "v2rayN.exe"
+    annotation: "v2rayN client"
+    annotation_en: "v2rayN client"
+    category: worker
+    severity: info
+
+  - id: vpn_xray
+    priority: 130
+    match:
+      name_equals: "xray.exe"
+    annotation: "Xray core proxy"
+    annotation_en: "Xray core proxy"
+    category: worker
+    severity: info
+
+  - id: vpn_singbox
+    priority: 130
+    match:
+      name_equals: "sing-box.exe"
+    annotation: "sing-box proxy platform"
+    annotation_en: "sing-box proxy platform"
+    category: worker
+    severity: info
+
+  - id: vpn_clash_verge
+    priority: 130
+    match:
+      name_equals: "Clash Verge.exe"
+    annotation: "Clash Verge client"
+    annotation_en: "Clash Verge client"
+    category: worker
+    severity: info
+
+  - id: vpn_mihomo
+    priority: 130
+    match:
+      name_equals: "mihomo.exe"
+    annotation: "mihomo/Clash core proxy"
+    annotation_en: "mihomo/Clash core proxy"
+    category: worker
+    severity: info
+
+  - id: net_putty
+    priority: 125
+    match:
+      name_equals: "putty.exe"
+    annotation: "PuTTY SSH/Telnet client"
+    annotation_en: "PuTTY SSH/Telnet client"
+    category: worker
+    severity: info
+
+  - id: net_mobaxterm
+    priority: 125
+    match:
+      name_equals: "MobaXterm.exe"
+    annotation: "MobaXterm terminal"
+    annotation_en: "MobaXterm terminal"
+    category: worker
+    severity: info
+
+  - id: net_mremoteng
+    priority: 125
+    match:
+      name_equals: "mRemoteNG.exe"
+    annotation: "mRemoteNG remote connections manager"
+    annotation_en: "mRemoteNG remote connections manager"
+    category: worker
+    severity: info
+
+  - id: net_filezilla
+    priority: 125
+    match:
+      name_equals: "filezilla.exe"
+    annotation: "FileZilla FTP client"
+    annotation_en: "FileZilla FTP client"
+    category: worker
+    severity: info
+
+  - id: net_winscp
+    priority: 125
+    match:
+      name_equals: "WinSCP.exe"
+    annotation: "WinSCP SFTP/FTP client"
+    annotation_en: "WinSCP SFTP/FTP client"
+    category: worker
+    severity: info
+
+  - id: net_wireshark
+    priority: 130
+    match:
+      name_equals: "Wireshark.exe"
+    annotation: "Wireshark network analyzer"
+    annotation_en: "Wireshark network analyzer"
+    category: worker
+    severity: info
+
+  - id: net_dumpcap
+    priority: 130
+    match:
+      name_equals: "dumpcap.exe"
+    annotation: "Wireshark capture engine"
+    annotation_en: "Wireshark capture engine"
+    category: worker
+    severity: info
+
+  - id: net_ssh
+    priority: 120
+    match:
+      name_equals: "ssh.exe"
+    annotation: "OpenSSH client"
+    annotation_en: "OpenSSH client"
+    category: system
+    severity: info
+
+  - id: net_sshd
+    priority: 125
+    match:
+      name_equals: "sshd.exe"
+    annotation: "OpenSSH server daemon"
+    annotation_en: "OpenSSH server daemon"
+    category: system
+    severity: info
+
+  - id: net_tor
+    priority: 130
+    match:
+      name_equals: "tor.exe"
+    annotation: "Tor proxy process"
+    annotation_en: "Tor proxy process"
+    category: worker
+    severity: info
+
+  - id: p2p_qbittorrent
+    priority: 125
+    match:
+      name_equals: "qbittorrent.exe"
+    annotation: "qBittorrent"
+    annotation_en: "qBittorrent"
+    category: worker
+    severity: info
+
+  - id: p2p_utorrent
+    priority: 125
+    match:
+      name_equals: "uTorrent.exe"
+    annotation: "uTorrent"
+    annotation_en: "uTorrent"
+    category: worker
+    severity: info
+
+  - id: p2p_bittorrent
+    priority: 125
+    match:
+      name_equals: "BitTorrent.exe"
+    annotation: "BitTorrent client"
+    annotation_en: "BitTorrent client"
+    category: worker
+    severity: info
+
+  - id: p2p_transmission
+    priority: 125
+    match:
+      name_equals: "transmission-qt.exe"
+    annotation: "Transmission BitTorrent client"
+    annotation_en: "Transmission BitTorrent client"
+    category: worker
+    severity: info
+
+  - id: p2p_deluge
+    priority: 125
+    match:
+      name_equals: "deluge.exe"
+    annotation: "Deluge BitTorrent client"
+    annotation_en: "Deluge BitTorrent client"
+    category: worker
+    severity: info
+
+  - id: cloud_onedrive_setup
+    priority: 140
+    match:
+      name_equals: "OneDriveSetup.exe"
+    annotation: "OneDrive setup component"
+    annotation_en: "OneDrive setup component"
+    category: updater
+    severity: info
+
+  - id: cloud_onedrive_updater
+    priority: 140
+    match:
+      name_equals: "OneDriveStandaloneUpdater.exe"
+    annotation: "OneDrive standalone updater"
+    annotation_en: "OneDrive standalone updater"
+    category: updater
+    severity: info
+
+  - id: cloud_gdrive
+    priority: 140
+    match:
+      name_equals: "GoogleDriveFS.exe"
+    annotation: "Google Drive for desktop"
+    annotation_en: "Google Drive for desktop"
+    category: worker
+    severity: info
+
+  - id: cloud_mega
+    priority: 135
+    match:
+      name_equals: "MEGAsync.exe"
+    annotation: "MEGAsync (MEGA cloud sync)"
+    annotation_en: "MEGAsync (MEGA cloud sync)"
+    category: worker
+    severity: info
+
+  - id: cloud_icloud_services
+    priority: 130
+    match:
+      name_equals: "iCloudServices.exe"
+    annotation: "iCloud Services"
+    annotation_en: "iCloud Services"
+    category: worker
+    severity: info
+
+  - id: cloud_icloud_drive
+    priority: 130
+    match:
+      name_equals: "iCloudDrive.exe"
+    annotation: "iCloud Drive"
+    annotation_en: "iCloud Drive"
+    category: worker
+    severity: info
+
+  - id: cloud_nextcloud
+    priority: 130
+    match:
+      name_equals: "nextcloud.exe"
+    annotation: "Nextcloud desktop sync client"
+    annotation_en: "Nextcloud desktop sync client"
+    category: worker
+    severity: info
+
+  - id: cloud_owncloud
+    priority: 130
+    match:
+      name_equals: "owncloud.exe"
+    annotation: "ownCloud desktop sync client"
+    annotation_en: "ownCloud desktop sync client"
+    category: worker
+    severity: info
+
+  - id: cloud_pcloud
+    priority: 130
+    match:
+      name_equals: "pCloud.exe"
+    annotation: "pCloud sync client"
+    annotation_en: "pCloud sync client"
+    category: worker
+    severity: info
+
+  - id: cloud_yandex_disk
+    priority: 130
+    match:
+      name_equals: "YandexDisk.exe"
+    annotation: "Yandex Disk sync client"
+    annotation_en: "Yandex Disk sync client"
+    category: worker
+    severity: info
+
+  - id: office_winword
+    priority: 135
+    match:
+      name_equals: "WINWORD.EXE"
+    annotation: "Microsoft Word"
+    annotation_en: "Microsoft Word"
+    category: worker
+    severity: info
+
+  - id: office_excel
+    priority: 135
+    match:
+      name_equals: "EXCEL.EXE"
+    annotation: "Microsoft Excel"
+    annotation_en: "Microsoft Excel"
+    category: worker
+    severity: info
+
+  - id: office_powerpnt
+    priority: 135
+    match:
+      name_equals: "POWERPNT.EXE"
+    annotation: "Microsoft PowerPoint"
+    annotation_en: "Microsoft PowerPoint"
+    category: worker
+    severity: info
+
+  - id: office_outlook
+    priority: 135
+    match:
+      name_equals: "OUTLOOK.EXE"
+    annotation: "Microsoft Outlook"
+    annotation_en: "Microsoft Outlook"
+    category: worker
+    severity: info
+
+  - id: office_onenote
+    priority: 130
+    match:
+      name_equals: "ONENOTE.EXE"
+    annotation: "Microsoft OneNote"
+    annotation_en: "Microsoft OneNote"
+    category: worker
+    severity: info
+
+  - id: office_access
+    priority: 130
+    match:
+      name_equals: "MSACCESS.EXE"
+    annotation: "Microsoft Access"
+    annotation_en: "Microsoft Access"
+    category: worker
+    severity: info
+
+  - id: office_publisher
+    priority: 130
+    match:
+      name_equals: "MSPUB.EXE"
+    annotation: "Microsoft Publisher"
+    annotation_en: "Microsoft Publisher"
+    category: worker
+    severity: info
+
+  - id: office_visio
+    priority: 130
+    match:
+      name_equals: "VISIO.EXE"
+    annotation: "Microsoft Visio"
+    annotation_en: "Microsoft Visio"
+    category: worker
+    severity: info
+
+  - id: office_libreoffice
+    priority: 130
+    match:
+      name_equals: "soffice.exe"
+    annotation: "LibreOffice / OpenOffice component"
+    annotation_en: "LibreOffice / OpenOffice component"
+    category: worker
+    severity: info
+
+  - id: office_wps
+    priority: 125
+    match:
+      name_equals: "wps.exe"
+    annotation: "WPS Office Writer"
+    annotation_en: "WPS Office Writer"
+    category: worker
+    severity: info
+
+  - id: pdf_acrobat
+    priority: 130
+    match:
+      name_equals: "Acrobat.exe"
+    annotation: "Adobe Acrobat"
+    annotation_en: "Adobe Acrobat"
+    category: worker
+    severity: info
+
+  - id: pdf_acrocef
+    priority: 135
+    match:
+      name_equals: "AcroCEF.exe"
+    annotation: "Adobe Acrobat embedded browser helper"
+    annotation_en: "Adobe Acrobat embedded browser helper"
+    category: browser_worker
+    severity: info
+
+  - id: pdf_foxit
+    priority: 125
+    match:
+      name_equals: "FoxitReader.exe"
+    annotation: "Foxit Reader"
+    annotation_en: "Foxit Reader"
+    category: worker
+    severity: info
+
+  - id: pdf_sumatra
+    priority: 120
+    match:
+      name_equals: "SumatraPDF.exe"
+    annotation: "Sumatra PDF"
+    annotation_en: "Sumatra PDF"
+    category: worker
+    severity: info
+
+  - id: pdf_pdfxchange
+    priority: 120
+    match:
+      name_equals: "PDFXEdit.exe"
+    annotation: "PDF-XChange Editor"
+    annotation_en: "PDF-XChange Editor"
+    category: worker
+    severity: info
+
+  - id: media_itunes
+    priority: 130
+    match:
+      name_equals: "iTunes.exe"
+    annotation: "Apple iTunes"
+    annotation_en: "Apple iTunes"
+    category: worker
+    severity: info
+
+  - id: media_vlc
+    priority: 125
+    match:
+      name_equals: "vlc.exe"
+    annotation: "VLC media player"
+    annotation_en: "VLC media player"
+    category: worker
+    severity: info
+
+  - id: media_mpc_hc
+    priority: 125
+    match:
+      name_equals: "mpc-hc64.exe"
+    annotation: "Media Player Classic - Home Cinema"
+    annotation_en: "Media Player Classic - Home Cinema"
+    category: worker
+    severity: info
+
+  - id: media_potplayer
+    priority: 125
+    match:
+      name_equals: "potplayermini64.exe"
+    annotation: "Daum PotPlayer"
+    annotation_en: "Daum PotPlayer"
+    category: worker
+    severity: info
+
+  - id: media_foobar
+    priority: 125
+    match:
+      name_equals: "foobar2000.exe"
+    annotation: "foobar2000 audio player"
+    annotation_en: "foobar2000 audio player"
+    category: worker
+    severity: info
+
+  - id: media_winamp
+    priority: 125
+    match:
+      name_equals: "winamp.exe"
+    annotation: "Winamp"
+    annotation_en: "Winamp"
+    category: worker
+    severity: info
+
+  - id: media_obs64
+    priority: 130
+    match:
+      name_equals: "obs64.exe"
+    annotation: "OBS Studio (streaming/recording)"
+    annotation_en: "OBS Studio (streaming/recording)"
+    category: worker
+    severity: info
+
+  - id: media_ffmpeg
+    priority: 125
+    match:
+      name_equals: "ffmpeg.exe"
+    annotation: "FFmpeg encoder/converter"
+    annotation_en: "FFmpeg encoder/converter"
+    category: worker
+    severity: info
+
+  - id: media_handbrake
+    priority: 125
+    match:
+      name_equals: "HandBrake.exe"
+    annotation: "HandBrake video transcoder"
+    annotation_en: "HandBrake video transcoder"
+    category: worker
+    severity: info
+
+  - id: media_plex
+    priority: 130
+    match:
+      name_equals: "Plex.exe"
+    annotation: "Plex client"
+    annotation_en: "Plex client"
+    category: worker
+    severity: info
+
+  - id: media_kodi
+    priority: 125
+    match:
+      name_equals: "Kodi.exe"
+    annotation: "Kodi media center"
+    annotation_en: "Kodi media center"
+    category: worker
+    severity: info
+
+  - id: media_audacity
+    priority: 125
+    match:
+      name_equals: "Audacity.exe"
+    annotation: "Audacity audio editor"
+    annotation_en: "Audacity audio editor"
+    category: worker
+    severity: info
+
+  - id: media_flstudio
+    priority: 125
+    match:
+      name_equals: "FL64.exe"
+    annotation: "FL Studio"
+    annotation_en: "FL Studio"
+    category: worker
+    severity: info
+
+  - id: creative_photoshop
+    priority: 130
+    match:
+      name_equals: "Photoshop.exe"
+    annotation: "Adobe Photoshop"
+    annotation_en: "Adobe Photoshop"
+    category: worker
+    severity: info
+
+  - id: creative_illustrator
+    priority: 130
+    match:
+      name_equals: "Illustrator.exe"
+    annotation: "Adobe Illustrator"
+    annotation_en: "Adobe Illustrator"
+    category: worker
+    severity: info
+
+  - id: creative_premiere
+    priority: 130
+    match:
+      name_equals: "Premiere Pro.exe"
+    annotation: "Adobe Premiere Pro"
+    annotation_en: "Adobe Premiere Pro"
+    category: worker
+    severity: info
+
+  - id: creative_aftereffects
+    priority: 130
+    match:
+      name_equals: "AfterFX.exe"
+    annotation: "Adobe After Effects"
+    annotation_en: "Adobe After Effects"
+    category: worker
+    severity: info
+
+  - id: creative_lightroom
+    priority: 130
+    match:
+      name_equals: "Lightroom.exe"
+    annotation: "Adobe Lightroom"
+    annotation_en: "Adobe Lightroom"
+    category: worker
+    severity: info
+
+  - id: creative_blender
+    priority: 130
+    match:
+      name_equals: "blender.exe"
+    annotation: "Blender 3D"
+    annotation_en: "Blender 3D"
+    category: worker
+    severity: info
+
+  - id: creative_unity
+    priority: 130
+    match:
+      name_equals: "Unity.exe"
+    annotation: "Unity Editor"
+    annotation_en: "Unity Editor"
+    category: worker
+    severity: info
+
+  - id: creative_unreal_editor
+    priority: 130
+    match:
+      name_equals: "UnrealEditor.exe"
+    annotation: "Unreal Editor"
+    annotation_en: "Unreal Editor"
+    category: worker
+    severity: info
+
+  - id: creative_godot
+    priority: 125
+    match:
+      name_equals: "Godot.exe"
+    annotation: "Godot Engine"
+    annotation_en: "Godot Engine"
+    category: worker
+    severity: info
+
+  - id: creative_maya
+    priority: 130
+    match:
+      name_equals: "maya.exe"
+    annotation: "Autodesk Maya"
+    annotation_en: "Autodesk Maya"
+    category: worker
+    severity: info
+
+  - id: creative_resolve
+    priority: 130
+    match:
+      name_equals: "Resolve.exe"
+    annotation: "DaVinci Resolve"
+    annotation_en: "DaVinci Resolve"
+    category: worker
+    severity: info
+
+  - id: creative_krita
+    priority: 125
+    match:
+      name_equals: "krita.exe"
+    annotation: "Krita drawing/painting"
+    annotation_en: "Krita drawing/painting"
+    category: worker
+    severity: info
+
+  - id: creative_gimp
+    priority: 125
+    match:
+      name_contains: "gimp"
+    annotation: "GIMP image editor"
+    annotation_en: "GIMP image editor"
+    category: worker
+    severity: info
+
+  - id: creative_inkscape
+    priority: 125
+    match:
+      name_equals: "inkscape.exe"
+    annotation: "Inkscape vector editor"
+    annotation_en: "Inkscape vector editor"
+    category: worker
+    severity: info
+
+  - id: creative_paintnet
+    priority: 125
+    match:
+      name_equals: "PaintDotNet.exe"
+    annotation: "paint.net"
+    annotation_en: "paint.net"
+    category: worker
+    severity: info
+
+  - id: creative_capcut
+    priority: 125
+    match:
+      name_equals: "CapCut.exe"
+    annotation: "CapCut video editor"
+    annotation_en: "CapCut video editor"
+    category: worker
+    severity: info
+
+  - id: util_autohotkey
+    priority: 120
+    match:
+      name_equals: "AutoHotkey.exe"
+    annotation: "AutoHotkey scripting utility"
+    annotation_en: "AutoHotkey scripting utility"
+    category: worker
+    severity: info
+
+  - id: util_autoit
+    priority: 120
+    match:
+      name_equals: "AutoIt3.exe"
+    annotation: "AutoIt script host"
+    annotation_en: "AutoIt script host"
+    category: worker
+    severity: info
+
+  - id: util_rainmeter
+    priority: 120
+    match:
+      name_equals: "Rainmeter.exe"
+    annotation: "Rainmeter desktop widgets"
+    annotation_en: "Rainmeter desktop widgets"
+    category: worker
+    severity: info
+
+  - id: util_wallpaper64
+    priority: 120
+    match:
+      name_equals: "wallpaper64.exe"
+    annotation: "Wallpaper Engine"
+    annotation_en: "Wallpaper Engine"
+    category: worker
+    severity: info
+
+  - id: util_listary
+    priority: 120
+    match:
+      name_equals: "Listary.exe"
+    annotation: "Listary search utility"
+    annotation_en: "Listary search utility"
+    category: worker
+    severity: info
+
+  - id: util_flow_launcher
+    priority: 120
+    match:
+      name_equals: "Flow.Launcher.exe"
+    annotation: "Flow Launcher"
+    annotation_en: "Flow Launcher"
+    category: worker
+    severity: info
+
+  - id: util_ditto
+    priority: 120
+    match:
+      name_equals: "Ditto.exe"
+    annotation: "Ditto clipboard manager"
+    annotation_en: "Ditto clipboard manager"
+    category: worker
+    severity: info
+
+  - id: util_sharex
+    priority: 120
+    match:
+      name_equals: "ShareX.exe"
+    annotation: "ShareX screenshot/upload tool"
+    annotation_en: "ShareX screenshot/upload tool"
+    category: worker
+    severity: info
+
+  - id: util_greenshot
+    priority: 120
+    match:
+      name_equals: "Greenshot.exe"
+    annotation: "Greenshot screenshot tool"
+    annotation_en: "Greenshot screenshot tool"
+    category: worker
+    severity: info
+
+  - id: util_snagit
+    priority: 120
+    match:
+      name_equals: "Snagit32.exe"
+    annotation: "Snagit capture tool"
+    annotation_en: "Snagit capture tool"
+    category: worker
+    severity: info
+
+  - id: util_lightshot
+    priority: 120
+    match:
+      name_equals: "Lightshot.exe"
+    annotation: "Lightshot screenshot tool"
+    annotation_en: "Lightshot screenshot tool"
+    category: worker
+    severity: info
+
+  - id: util_screentogif
+    priority: 120
+    match:
+      name_equals: "ScreenToGif.exe"
+    annotation: "ScreenToGif recorder"
+    annotation_en: "ScreenToGif recorder"
+    category: worker
+    severity: info
+
+  - id: util_flux
+    priority: 120
+    match:
+      name_equals: "flux.exe"
+    annotation: "f.lux (цветовая температура экрана)"
+    annotation_en: "f.lux (screen color temperature)"
+    category: worker
+    severity: info
+
+  - id: util_displayfusion
+    priority: 120
+    match:
+      name_equals: "DisplayFusion.exe"
+    annotation: "DisplayFusion multi-monitor manager"
+    annotation_en: "DisplayFusion multi-monitor manager"
+    category: worker
+    severity: info
+
+  - id: util_classicstart
+    priority: 120
+    match:
+      name_equals: "ClassicStartMenu.exe"
+    annotation: "Classic Shell / Open-Shell start menu"
+    annotation_en: "Classic Shell / Open-Shell start menu"
+    category: worker
+    severity: info
+
+  - id: util_windirstat
+    priority: 115
+    match:
+      name_equals: "WinDirStat.exe"
+    annotation: "WinDirStat disk usage analyzer"
+    annotation_en: "WinDirStat disk usage analyzer"
+    category: worker
+    severity: info
+
+  - id: util_wiztree
+    priority: 115
+    match:
+      name_equals: "WizTree.exe"
+    annotation: "WizTree disk usage analyzer"
+    annotation_en: "WizTree disk usage analyzer"
+    category: worker
+    severity: info
+
+  - id: util_treesize
+    priority: 115
+    match:
+      name_equals: "TreeSize.exe"
+    annotation: "TreeSize disk usage analyzer"
+    annotation_en: "TreeSize disk usage analyzer"
+    category: worker
+    severity: info
+
+  - id: util_ccleaner
+    priority: 115
+    match:
+      name_equals: "CCleaner64.exe"
+    annotation: "CCleaner (очистка системы)"
+    annotation_en: "CCleaner (system cleaner)"
+    category: worker
+    severity: info
+    actions:
+      - "Используйте осторожно: очистка реестра и системных файлов может быть рискованной"
+
+  - id: util_bleachbit
+    priority: 115
+    match:
+      name_equals: "BleachBit.exe"
+    annotation: "BleachBit cleaner"
+    annotation_en: "BleachBit cleaner"
+    category: worker
+    severity: info
+
+  - id: util_processhacker
+    priority: 125
+    match:
+      name_equals: "ProcessHacker.exe"
+    annotation: "Process Hacker (advanced task manager)"
+    annotation_en: "Process Hacker (advanced task manager)"
+    category: worker
+    severity: info
+
+  - id: util_systeminformer
+    priority: 125
+    match:
+      name_equals: "SystemInformer.exe"
+    annotation: "System Informer (Process Hacker successor)"
+    annotation_en: "System Informer (Process Hacker successor)"
+    category: worker
+    severity: info
+
+  - id: util_procexp64
+    priority: 125
+    match:
+      name_equals: "procexp64.exe"
+    annotation: "Sysinternals Process Explorer"
+    annotation_en: "Sysinternals Process Explorer"
+    category: worker
+    severity: info
+
+  - id: util_procmon64
+    priority: 125
+    match:
+      name_equals: "procmon64.exe"
+    annotation: "Sysinternals Process Monitor"
+    annotation_en: "Sysinternals Process Monitor"
+    category: worker
+    severity: info
+
+  - id: util_tcpview
+    priority: 120
+    match:
+      name_equals: "Tcpview.exe"
+    annotation: "Sysinternals TCPView"
+    annotation_en: "Sysinternals TCPView"
+    category: worker
+    severity: info
+
+  - id: util_autoruns64
+    priority: 120
+    match:
+      name_equals: "Autoruns64.exe"
+    annotation: "Sysinternals Autoruns"
+    annotation_en: "Sysinternals Autoruns"
+    category: worker
+    severity: info
+
+  - id: sec_keepass
+    priority: 125
+    match:
+      name_equals: "KeePass.exe"
+    annotation: "KeePass password manager"
+    annotation_en: "KeePass password manager"
+    category: worker
+    severity: info
+
+  - id: sec_keepassxc
+    priority: 125
+    match:
+      name_equals: "KeePassXC.exe"
+    annotation: "KeePassXC password manager"
+    annotation_en: "KeePassXC password manager"
+    category: worker
+    severity: info
+
+  - id: sec_bitwarden
+    priority: 125
+    match:
+      name_equals: "Bitwarden.exe"
+    annotation: "Bitwarden password manager"
+    annotation_en: "Bitwarden password manager"
+    category: worker
+    severity: info
+
+  - id: sec_1password
+    priority: 125
+    match:
+      name_equals: "1Password.exe"
+    annotation: "1Password"
+    annotation_en: "1Password"
+    category: worker
+    severity: info
+
+  - id: sec_nordpass
+    priority: 125
+    match:
+      name_equals: "NordPass.exe"
+    annotation: "NordPass password manager"
+    annotation_en: "NordPass password manager"
+    category: worker
+    severity: info
+
+  - id: sec_cryptomator
+    priority: 125
+    match:
+      name_equals: "Cryptomator.exe"
+    annotation: "Cryptomator encrypted cloud vaults"
+    annotation_en: "Cryptomator encrypted cloud vaults"
+    category: worker
+    severity: info
+
+  - id: sec_kleopatra
+    priority: 120
+    match:
+      name_equals: "kleopatra.exe"
+    annotation: "Kleopatra certificate manager (Gpg4win)"
+    annotation_en: "Kleopatra certificate manager (Gpg4win)"
+    category: worker
+    severity: info
+
+  - id: sec_gpg_agent
+    priority: 120
+    match:
+      name_equals: "gpg-agent.exe"
+    annotation: "GnuPG agent"
+    annotation_en: "GnuPG agent"
+    category: worker
+    severity: info
+
+  - id: sec_sysmon64
+    priority: 130
+    match:
+      name_equals: "sysmon64.exe"
+    annotation: "Sysinternals Sysmon (system monitoring)"
+    annotation_en: "Sysinternals Sysmon (system monitoring)"
+    category: system
+    severity: info
+
+  - id: sec_osqueryd
+    priority: 125
+    match:
+      name_equals: "osqueryd.exe"
+    annotation: "osquery agent"
+    annotation_en: "osquery agent"
+    category: worker
+    severity: info
+
+  - id: sec_wazuh
+    priority: 125
+    match:
+      name_equals: "wazuh-agent.exe"
+    annotation: "Wazuh security agent"
+    annotation_en: "Wazuh security agent"
+    category: antivirus
+    severity: info
+
+  - id: misc_postman
+    priority: 125
+    match:
+      name_equals: "Postman.exe"
+    annotation: "Postman API client"
+    annotation_en: "Postman API client"
+    category: worker
+    severity: info
+
+  - id: misc_insomnia
+    priority: 120
+    match:
+      name_equals: "Insomnia.exe"
+    annotation: "Insomnia API client"
+    annotation_en: "Insomnia API client"
+    category: worker
+    severity: info
+
+  - id: misc_fiddler
+    priority: 120
+    match:
+      name_equals: "Fiddler.exe"
+    annotation: "Fiddler web debugging proxy"
+    annotation_en: "Fiddler web debugging proxy"
+    category: worker
+    severity: info
+
+  - id: misc_charles
+    priority: 120
+    match:
+      name_equals: "Charles.exe"
+    annotation: "Charles Proxy"
+    annotation_en: "Charles Proxy"
+    category: worker
+    severity: info
+
+  - id: misc_rufus
+    priority: 115
+    match:
+      name_equals: "rufus.exe"
+    annotation: "Rufus USB boot creator"
+    annotation_en: "Rufus USB boot creator"
+    category: worker
+    severity: info
+
+  - id: misc_etcher
+    priority: 120
+    match:
+      name_equals: "balenaEtcher.exe"
+    annotation: "balenaEtcher USB/SD imager"
+    annotation_en: "balenaEtcher USB/SD imager"
+    category: worker
+    severity: info
+
+  - id: misc_heidisql
+    priority: 120
+    match:
+      name_equals: "heidisql.exe"
+    annotation: "HeidiSQL database client"
+    annotation_en: "HeidiSQL database client"
+    category: worker
+    severity: info
+
+  - id: misc_dbeaver
+    priority: 120
+    match:
+      name_equals: "dbeaver.exe"
+    annotation: "DBeaver database tool"
+    annotation_en: "DBeaver database tool"
+    category: worker
+    severity: info
+
+  - id: misc_datagrip
+    priority: 120
+    match:
+      name_equals: "datagrip64.exe"
+    annotation: "JetBrains DataGrip"
+    annotation_en: "JetBrains DataGrip"
+    category: worker
+    severity: info
+
+  - id: misc_mysql_workbench
+    priority: 120
+    match:
+      name_equals: "MySQLWorkbench.exe"
+    annotation: "MySQL Workbench"
+    annotation_en: "MySQL Workbench"
+    category: worker
+    severity: info
+
+  - id: misc_pgadmin
+    priority: 120
+    match:
+      name_equals: "pgadmin4.exe"
+    annotation: "pgAdmin 4"
+    annotation_en: "pgAdmin 4"
+    category: worker
+    severity: info
+
+  - id: misc_obsidian
+    priority: 120
+    match:
+      name_equals: "Obsidian.exe"
+    annotation: "Obsidian notes"
+    annotation_en: "Obsidian notes"
+    category: worker
+    severity: info
+
+  - id: misc_notion
+    priority: 120
+    match:
+      name_equals: "Notion.exe"
+    annotation: "Notion desktop"
+    annotation_en: "Notion desktop"
+    category: worker
+    severity: info
+
+  - id: misc_evernote
+    priority: 120
+    match:
+      name_equals: "Evernote.exe"
+    annotation: "Evernote"
+    annotation_en: "Evernote"
+    category: worker
+    severity: info
+
+  - id: misc_joplin
+    priority: 120
+    match:
+      name_equals: "Joplin.exe"
+    annotation: "Joplin notes"
+    annotation_en: "Joplin notes"
+    category: worker
+    severity: info
+
+  - id: misc_anki
+    priority: 115
+    match:
+      name_equals: "anki.exe"
+    annotation: "Anki flashcards"
+    annotation_en: "Anki flashcards"
+    category: worker
+    severity: info
+
+  - id: misc_calibre
+    priority: 115
+    match:
+      name_equals: "calibre.exe"
+    annotation: "Calibre e-book manager"
+    annotation_en: "Calibre e-book manager"
+    category: worker
+    severity: info
+
+  - id: misc_totalcmd
+    priority: 115
+    match:
+      name_equals: "TOTALCMD64.EXE"
+    annotation: "Total Commander"
+    annotation_en: "Total Commander"
+    category: worker
+    severity: info
+
+  - id: misc_dopus
+    priority: 115
+    match:
+      name_equals: "dopus.exe"
+    annotation: "Directory Opus"
+    annotation_en: "Directory Opus"
+    category: worker
+    severity: info
+
+  - id: misc_far
+    priority: 110
+    match:
+      name_equals: "far.exe"
+    annotation: "FAR Manager"
+    annotation_en: "FAR Manager"
+    category: worker
+    severity: info
+
+  - id: misc_bandizip
+    priority: 110
+    match:
+      name_equals: "Bandizip.exe"
+    annotation: "Bandizip archiver"
+    annotation_en: "Bandizip archiver"
+    category: worker
+    severity: info
+
+  - id: misc_winzip
+    priority: 110
+    match:
+      name_equals: "winzip64.exe"
+    annotation: "WinZip"
+    annotation_en: "WinZip"
+    category: worker
+    severity: info

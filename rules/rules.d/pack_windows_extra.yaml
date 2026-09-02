@@ -1,0 +1,365 @@
+# Extra Windows / Microsoft processes
+rules:
+  - id: userowa
+    priority: 100
+    match: { name_equals: "UserOOBEBroker.exe" }
+    annotation: "User OOBE Broker — первоначальная настройка Windows"
+    annotation_en: "User OOBE Broker"
+    category: system
+
+  - id: oobesettings
+    priority: 100
+    match: { name_equals: "Windows10xOOBE.exe" }
+    annotation: "Windows OOBE"
+    annotation_en: "Windows OOBE"
+    category: system
+
+  - id: consent
+    priority: 120
+    match: { name_equals: "consent.exe" }
+    annotation: "UAC Consent — запрос контроля учётных записей"
+    annotation_en: "UAC Consent UI"
+    category: system
+
+  - id: sgrmbroker
+    priority: 110
+    match: { name_equals: "SgrmBroker.exe" }
+    annotation: "System Guard Runtime Monitor Broker"
+    annotation_en: "System Guard Runtime Monitor Broker"
+    category: system
+
+  - id: securityhealthservice
+    priority: 140
+    match: { name_equals: "SecurityHealthService.exe" }
+    annotation: "Служба безопасности Windows"
+    annotation_en: "Windows Security Health Service"
+    category: antivirus
+
+  - id: securityhealthhost
+    priority: 130
+    match: { name_equals: "SecurityHealthHost.exe" }
+    annotation: "Хост интерфейса Windows Security"
+    annotation_en: "Windows Security UI host"
+    category: antivirus
+
+  - id: smartscreen_path
+    priority: 140
+    match: { name_equals: "smartscreen.exe" }
+    annotation: "Windows SmartScreen — проверка репутации файлов и сайтов"
+    annotation_en: "Windows SmartScreen"
+    category: antivirus
+
+  - id: mpcmdrun
+    priority: 130
+    match: { name_equals: "MpCmdRun.exe" }
+    annotation: "Microsoft Defender — утилита командной строки"
+    annotation_en: "Microsoft Defender command-line utility"
+    category: antivirus
+
+  - id: nissrv
+    priority: 140
+    match: { name_equals: "NisSrv.exe" }
+    annotation: "Microsoft Defender Network Inspection Service"
+    annotation_en: "Microsoft Defender Network Inspection Service"
+    category: antivirus
+
+  - id: msseces
+    priority: 120
+    match: { name_equals: "MSASCuiL.exe" }
+    annotation: "Microsoft Defender UI"
+    annotation_en: "Microsoft Defender UI"
+    category: antivirus
+
+  - id: wermgr
+    priority: 100
+    match: { name_equals: "wermgr.exe" }
+    annotation: "Windows Error Reporting"
+    annotation_en: "Windows Error Reporting"
+    category: system
+
+  - id: werfault
+    priority: 100
+    match: { name_equals: "WerFault.exe" }
+    annotation: "Windows Error Reporting fault handler"
+    annotation_en: "Windows Error Reporting fault handler"
+    category: system
+
+  - id: sppsvc_host
+    priority: 100
+    match: { name_equals: "sppsvc.exe" }
+    annotation: "Software Protection Platform — лицензирование Windows/Office"
+    annotation_en: "Software Protection Platform (licensing)"
+    category: system
+
+  - id: clipup
+    priority: 100
+    match: { name_equals: "ClipUp.exe" }
+    annotation: "Client License Platform"
+    annotation_en: "Client License Platform"
+    category: system
+
+  - id: searchprotocolhost
+    priority: 110
+    match: { name_equals: "SearchProtocolHost.exe" }
+    annotation: "Windows Search Protocol Host"
+    annotation_en: "Windows Search Protocol Host"
+    category: system
+
+  - id: searchfilterhost
+    priority: 110
+    match: { name_equals: "SearchFilterHost.exe" }
+    annotation: "Windows Search Filter Host"
+    annotation_en: "Windows Search Filter Host"
+    category: system
+
+  - id: runtimebroker2
+    priority: 100
+    match: { name_equals: "RuntimeBroker.exe" }
+    annotation: "Runtime Broker — права UWP/Store-приложений. Несколько экземпляров — норма."
+    annotation_en: "Runtime Broker — UWP/Store permissions. Multiple instances are normal."
+    category: system
+
+  - id: gamebarftserver
+    priority: 110
+    match: { name_equals: "GameBarFTServer.exe" }
+    annotation: "Xbox Game Bar FT Server"
+    annotation_en: "Xbox Game Bar FT Server"
+    category: system
+
+  - id: gameinputsvc
+    priority: 110
+    match: { name_contains: "GameInput" }
+    annotation: "Microsoft GameInput"
+    annotation_en: "Microsoft GameInput"
+    category: system
+
+  - id: yourphone
+    priority: 120
+    match: { name_equals: "YourPhone.exe" }
+    annotation: "Связь с телефоном (Phone Link)"
+    annotation_en: "Phone Link"
+    category: system
+
+  - id: crossdevice
+    priority: 110
+    match: { name_contains: "CrossDevice" }
+    annotation: "Cross Device / продолжение задач между устройствами"
+    annotation_en: "Cross Device Resume"
+    category: system
+
+  - id: startmenuexperience
+    priority: 110
+    match: { name_equals: "StartMenuExperienceHost.exe" }
+    annotation: "Хост меню Пуск"
+    annotation_en: "Start Menu host"
+    category: system
+
+  - id: shellexperiencehost
+    priority: 110
+    match: { name_equals: "ShellExperienceHost.exe" }
+    annotation: "Shell Experience Host — центр уведомлений / быстрые настройки"
+    annotation_en: "Shell Experience Host (Action Center / quick settings)"
+    category: system
+
+  - id: video_tui
+    priority: 100
+    match: { name_equals: "Video.UI.exe" }
+    annotation: "Приложение «Кино и ТВ»"
+    annotation_en: "Movies & TV app"
+    category: system
+
+  - id: calculator
+    priority: 90
+    match: { name_equals: "Calculator.exe" }
+    annotation: "Калькулятор Windows"
+    annotation_en: "Windows Calculator"
+    category: system
+
+  - id: photos_app
+    priority: 90
+    match: { name_contains: "Photos.exe" }
+    annotation: "Приложение «Фотографии» Windows"
+    annotation_en: "Windows Photos app"
+    category: system
+
+  - id: snippingtool
+    priority: 90
+    match: { name_equals: "SnippingTool.exe" }
+    annotation: "Ножницы Windows"
+    annotation_en: "Snipping Tool"
+    category: system
+
+  - id: screenclipping
+    priority: 90
+    match: { name_equals: "ScreenClippingHost.exe" }
+    annotation: "Хост скриншотов Windows"
+    annotation_en: "Screen clipping host"
+    category: system
+
+  - id: notepad_win
+    priority: 90
+    match: { name_equals: "Notepad.exe" }
+    annotation: "Блокнот"
+    annotation_en: "Notepad"
+    category: system
+
+  - id: mspaint
+    priority: 90
+    match: { name_equals: "mspaint.exe" }
+    annotation: "Paint"
+    annotation_en: "Paint"
+    category: system
+
+  - id: cmd
+    priority: 90
+    match: { name_equals: "cmd.exe" }
+    annotation: "Командная строка Windows"
+    annotation_en: "Windows Command Prompt"
+    category: system
+
+  - id: powershell
+    priority: 100
+    match: { name_equals: "powershell.exe" }
+    annotation: "Windows PowerShell"
+    annotation_en: "Windows PowerShell"
+    category: system
+
+  - id: pwsh
+    priority: 100
+    match: { name_equals: "pwsh.exe" }
+    annotation: "PowerShell 7+"
+    annotation_en: "PowerShell 7+"
+    category: system
+
+  - id: windowsterminal
+    priority: 100
+    match: { name_equals: "WindowsTerminal.exe" }
+    annotation: "Windows Terminal"
+    annotation_en: "Windows Terminal"
+    category: system
+
+  - id: openconsole
+    priority: 90
+    match: { name_equals: "OpenConsole.exe" }
+    annotation: "OpenConsole (часть Windows Terminal)"
+    annotation_en: "OpenConsole (Windows Terminal)"
+    category: system
+
+  - id: usosvc_related
+    priority: 120
+    match: { name_equals: "usoclient.exe" }
+    annotation: "Update Session Orchestrator client"
+    annotation_en: "Update Session Orchestrator client"
+    category: updater
+
+  - id: mouoscore
+    priority: 120
+    match: { name_contains: "MoUsoCoreWorker" }
+    annotation: "Windows Update Medic / USO worker"
+    annotation_en: "Windows Update Medic / USO worker"
+    category: updater
+
+  - id: musnotification
+    priority: 110
+    match: { name_contains: "MusNotification" }
+    annotation: "Уведомления Windows Update"
+    annotation_en: "Windows Update notifications"
+    category: updater
+
+  - id: compattelrunner
+    priority: 140
+    match: { name_equals: "CompatTelRunner.exe" }
+    annotation: "Compatibility Telemetry — телеметрия совместимости Windows"
+    annotation_en: "Compatibility Telemetry"
+    category: telemetry
+
+  - id: device_census
+    priority: 130
+    match: { name_equals: "DeviceCensus.exe" }
+    annotation: "Device Census — сбор сведений об устройстве (телеметрия)"
+    annotation_en: "Device Census (telemetry)"
+    category: telemetry
+
+  - id: diagtrack_host
+    priority: 130
+    match: { name_equals: "diagtrack.exe" }
+    annotation: "Connected User Experiences and Telemetry (DiagTrack)"
+    annotation_en: "Connected User Experiences and Telemetry (DiagTrack)"
+    category: telemetry
+
+  - id: excel
+    priority: 100
+    match: { name_equals: "EXCEL.EXE" }
+    annotation: "Microsoft Excel"
+    annotation_en: "Microsoft Excel"
+    category: worker
+
+  - id: winword
+    priority: 100
+    match: { name_equals: "WINWORD.EXE" }
+    annotation: "Microsoft Word"
+    annotation_en: "Microsoft Word"
+    category: worker
+
+  - id: powerpnt
+    priority: 100
+    match: { name_equals: "POWERPNT.EXE" }
+    annotation: "Microsoft PowerPoint"
+    annotation_en: "Microsoft PowerPoint"
+    category: worker
+
+  - id: outlook
+    priority: 110
+    match: { name_equals: "OUTLOOK.EXE" }
+    annotation: "Microsoft Outlook"
+    annotation_en: "Microsoft Outlook"
+    category: worker
+
+  - id: onenote
+    priority: 100
+    match: { name_equals: "ONENOTE.EXE" }
+    annotation: "Microsoft OneNote"
+    annotation_en: "Microsoft OneNote"
+    category: worker
+
+  - id: teams_ms
+    priority: 120
+    match: { name_equals: "ms-teams.exe" }
+    annotation: "Microsoft Teams"
+    annotation_en: "Microsoft Teams"
+    category: worker
+
+  - id: teams_update
+    priority: 120
+    match: { name_equals: "Update.exe", path_contains: "Teams" }
+    annotation: "Microsoft Teams Updater"
+    annotation_en: "Microsoft Teams Updater"
+    category: updater
+
+  - id: onedrive_setup
+    priority: 120
+    match: { name_equals: "OneDriveSetup.exe" }
+    annotation: "Установщик / обновление OneDrive"
+    annotation_en: "OneDrive setup / update"
+    category: updater
+
+  - id: onedrive_standalone
+    priority: 120
+    match: { name_equals: "OneDriveStandaloneUpdater.exe" }
+    annotation: "Автономное обновление OneDrive"
+    annotation_en: "OneDrive standalone updater"
+    category: updater
+
+  - id: store_app
+    priority: 110
+    match: { name_equals: "WinStore.App.exe" }
+    annotation: "Microsoft Store"
+    annotation_en: "Microsoft Store"
+    category: system
+
+  - id: winstore_uwp
+    priority: 100
+    match: { name_contains: "WinStore" }
+    annotation: "Компонент Microsoft Store"
+    annotation_en: "Microsoft Store component"
+    category: system

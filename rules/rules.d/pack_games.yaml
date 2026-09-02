@@ -1,0 +1,232 @@
+# Game launchers and related
+rules:
+  - id: steam
+    priority: 140
+    match: { name_equals: "steam.exe" }
+    annotation: "Steam — клиент Valve"
+    annotation_en: "Steam — Valve game client"
+    category: worker
+
+  - id: steamwebhelper
+    priority: 145
+    match: { name_equals: "steamwebhelper.exe" }
+    annotation: "Steam WebHelper — CEF/Chromium UI внутри Steam. Много процессов — норма."
+    annotation_en: "Steam WebHelper — CEF/Chromium UI inside Steam. Multiple processes are normal."
+    category: browser_worker
+
+  - id: steamservice
+    priority: 130
+    match: { name_equals: "steamservice.exe" }
+    annotation: "Steam Service — фоновое обновление"
+    annotation_en: "Steam Service — background update service"
+    category: updater
+
+  - id: gameoverlayui
+    priority: 120
+    match: { name_equals: "gameoverlayui.exe" }
+    annotation: "Steam Game Overlay"
+    annotation_en: "Steam Game Overlay"
+    category: worker
+
+  - id: steamerrorreporter
+    priority: 100
+    match: { name_equals: "steamerrorreporter.exe" }
+    annotation: "Steam Error Reporter"
+    annotation_en: "Steam Error Reporter"
+    category: worker
+
+  - id: epic_launcher
+    priority: 140
+    match: { name_equals: "EpicGamesLauncher.exe" }
+    annotation: "Epic Games Launcher"
+    annotation_en: "Epic Games Launcher"
+    category: worker
+
+  - id: epic_webhelper
+    priority: 130
+    match: { name_contains: "EpicWebHelper" }
+    annotation: "Epic Games WebHelper (CEF)"
+    annotation_en: "Epic Games WebHelper (CEF)"
+    category: browser_worker
+
+  - id: unrealcefgpu
+    priority: 120
+    match: { name_contains: "UnrealCEFSubProcess" }
+    annotation: "Unreal / Epic CEF subprocess"
+    annotation_en: "Unreal / Epic CEF subprocess"
+    category: browser_worker
+
+  - id: battle_net
+    priority: 140
+    match: { name_equals: "Battle.net.exe" }
+    annotation: "Battle.net (Blizzard)"
+    annotation_en: "Battle.net (Blizzard)"
+    category: worker
+
+  - id: agent_blizz
+    priority: 130
+    match: { name_equals: "Agent.exe", path_contains: "Battle.net" }
+    annotation: "Battle.net Agent"
+    annotation_en: "Battle.net Agent"
+    category: updater
+
+  - id: blizzard_update
+    priority: 120
+    match: { path_contains: "Battle.net", name_contains: "Update" }
+    annotation: "Battle.net Updater"
+    annotation_en: "Battle.net Updater"
+    category: updater
+
+  - id: ubisoft_connect
+    priority: 130
+    match: { name_equals: "upc.exe" }
+    annotation: "Ubisoft Connect"
+    annotation_en: "Ubisoft Connect"
+    category: worker
+
+  - id: ubisoft_connect2
+    priority: 130
+    match: { name_contains: "UbisoftConnect" }
+    annotation: "Ubisoft Connect"
+    annotation_en: "Ubisoft Connect"
+    category: worker
+
+  - id: uplay
+    priority: 120
+    match: { name_equals: "Uplay.exe" }
+    annotation: "Ubisoft Uplay (legacy name)"
+    annotation_en: "Ubisoft Uplay (legacy name)"
+    category: worker
+
+  - id: origin
+    priority: 120
+    match: { name_equals: "Origin.exe" }
+    annotation: "EA Origin (legacy)"
+    annotation_en: "EA Origin (legacy)"
+    category: worker
+
+  - id: ea_app
+    priority: 130
+    match: { name_equals: "EADesktop.exe" }
+    annotation: "EA App"
+    annotation_en: "EA App"
+    category: worker
+
+  - id: ea_launcher
+    priority: 120
+    match: { name_contains: "EALauncher" }
+    annotation: "EA Launcher"
+    annotation_en: "EA Launcher"
+    category: worker
+
+  - id: ea_background
+    priority: 120
+    match: { name_equals: "EABackgroundService.exe" }
+    annotation: "EA Background Service"
+    annotation_en: "EA Background Service"
+    category: worker
+
+  - id: gog_galaxy
+    priority: 130
+    match: { name_equals: "GalaxyClient.exe" }
+    annotation: "GOG Galaxy"
+    annotation_en: "GOG Galaxy"
+    category: worker
+
+  - id: gog_service
+    priority: 120
+    match: { name_contains: "GalaxyClientService" }
+    annotation: "GOG Galaxy Service"
+    annotation_en: "GOG Galaxy Service"
+    category: worker
+
+  - id: rockstar
+    priority: 120
+    match: { name_equals: "Launcher.exe", path_contains: "Rockstar Games" }
+    annotation: "Rockstar Games Launcher"
+    annotation_en: "Rockstar Games Launcher"
+    category: worker
+
+  - id: rockstar2
+    priority: 120
+    match: { path_contains: "Rockstar Games\\Launcher" }
+    annotation: "Rockstar Games Launcher"
+    annotation_en: "Rockstar Games Launcher"
+    category: worker
+
+  - id: riot_client
+    priority: 130
+    match: { name_equals: "RiotClientServices.exe" }
+    annotation: "Riot Client"
+    annotation_en: "Riot Client"
+    category: worker
+
+  - id: riot_client2
+    priority: 120
+    match: { name_contains: "RiotClient" }
+    annotation: "Riot Client component"
+    annotation_en: "Riot Client component"
+    category: worker
+
+  - id: valorant
+    priority: 120
+    match: { name_equals: "VALORANT-Win64-Shipping.exe" }
+    annotation: "Valorant"
+    annotation_en: "Valorant"
+    category: worker
+
+  - id: vgc
+    priority: 130
+    match: { name_equals: "vgc.exe" }
+    annotation: "Riot Vanguard (античит) — драйвер/сервис"
+    annotation_en: "Riot Vanguard anti-cheat"
+    category: vendor
+
+  - id: vgtray
+    priority: 120
+    match: { name_equals: "vgtray.exe" }
+    annotation: "Vanguard tray"
+    annotation_en: "Vanguard tray"
+    category: vendor
+
+  - id: easyanticheat
+    priority: 130
+    match: { name_contains: "EasyAntiCheat" }
+    annotation: "Easy Anti-Cheat"
+    annotation_en: "Easy Anti-Cheat"
+    category: vendor
+
+  - id: battleye
+    priority: 130
+    match: { name_contains: "BEService" }
+    annotation: "BattlEye anti-cheat service"
+    annotation_en: "BattlEye anti-cheat service"
+    category: vendor
+
+  - id: battleye2
+    priority: 120
+    match: { name_contains: "BattlEye" }
+    annotation: "BattlEye anti-cheat"
+    annotation_en: "BattlEye anti-cheat"
+    category: vendor
+
+  - id: xboxapp
+    priority: 110
+    match: { name_contains: "XboxPcApp" }
+    annotation: "Xbox PC App"
+    annotation_en: "Xbox PC App"
+    category: worker
+
+  - id: minecraft
+    priority: 110
+    match: { name_equals: "Minecraft.exe" }
+    annotation: "Minecraft"
+    annotation_en: "Minecraft"
+    category: worker
+
+  - id: javaw_mc
+    priority: 100
+    match: { name_equals: "javaw.exe", path_contains: "minecraft" }
+    annotation: "Minecraft (Java)"
+    annotation_en: "Minecraft (Java)"
+    category: worker

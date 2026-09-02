@@ -1,0 +1,9 @@
+# Example community pack — safe to edit or delete
+rules:
+  - id: example_processannotator_self
+    priority: 120
+    category: worker
+    annotation: "ProcessAnnotator (этот инструмент)"
+    annotation_en: "ProcessAnnotator (this tool)"
+    match:
+      name_equals: "ProcessAnnotator.exe"

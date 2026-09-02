@@ -1,0 +1,1188 @@
+# ProcessAnnotator Knowledge Base
+# match: если указано несколько условий — все должны совпасть (AND)
+# priority: чем выше, тем раньше проверяется
+# при равном priority побеждает правило из rules.d/, затем имя файла, затем id
+
+rules:
+  # ==================== AMD ====================
+  - id: amd_auepmaster
+    priority: 200
+    match:
+      name_equals: "AUEPMaster.exe"
+    annotation: "AMD User Experience Program (телеметрия AMD). Собирает данные об использовании."
+    annotation_en: "AMD User Experience Program (AMD telemetry). Collects usage data."
+    category: telemetry
+    severity: info
+    actions:
+      - "Можно отключить в Radeon Software → Preferences → AMD Privacy"
+
+  - id: amd_auepmaster_path
+    priority: 195
+    match:
+      path_contains: "AMD\\Performance Profile Client"
+      name_contains: "AUEP"
+    annotation: "AMD User Experience Program (телеметрия)"
+    annotation_en: "AMD User Experience Program (telemetry)"
+    category: telemetry
+    severity: info
+    actions:
+      - "Можно отключить в Radeon Software"
+
+  - id: amd_radeon_software
+    priority: 160
+    match:
+      name_equals: "RadeonSoftware.exe"
+    annotation: "AMD Radeon Software (панель управления графикой)"
+    annotation_en: "AMD Radeon Software (graphics control panel)"
+    category: vendor
+    severity: info
+
+  - id: amd_amdrsserv
+    priority: 150
+    match:
+      name_equals: "AMDRSServ.exe"
+    annotation: "AMD Radeon Settings Service"
+    annotation_en: "AMD Radeon Settings Service"
+    category: vendor
+    severity: info
+
+  - id: amd_cncmd
+    priority: 140
+    match:
+      name_equals: "cncmd.exe"
+      path_contains: "AMD\\CNext"
+    annotation: "AMD Command Center helper"
+    annotation_en: "AMD Command Center helper"
+    category: vendor
+    severity: info
+
+  - id: amd_cpumetrics
+    priority: 140
+    match:
+      name_equals: "CPUMetricsServer.exe"
+    annotation: "AMD CPU Metrics Server (мониторинг процессора для Radeon Software)"
+    annotation_en: "AMD CPU Metrics Server (CPU monitoring for Radeon Software)"
+    category: vendor
+    severity: info
+
+  - id: amd_amdow
+    priority: 130
+    match:
+      name_equals: "amdow.exe"
+    annotation: "AMD Overlay / Relive helper"
+    annotation_en: "AMD Overlay / Relive helper"
+    category: vendor
+    severity: info
+
+  # ==================== NVIDIA ====================
+  - id: nvidia_container
+    priority: 160
+    match:
+      name_equals: "nvcontainer.exe"
+    annotation: "NVIDIA Container — хост для сервисов NVIDIA (телеметрия, ShadowPlay и т.д.)"
+    annotation_en: "NVIDIA Container — host for NVIDIA services (telemetry, ShadowPlay, etc.)"
+    category: vendor
+    severity: info
+
+  - id: nvidia_overlay
+    priority: 150
+    match:
+      name_equals: "NVIDIA Overlay.exe"
+    annotation: "NVIDIA Overlay / GeForce Experience overlay"
+    annotation_en: "NVIDIA Overlay / GeForce Experience overlay"
+    category: vendor
+    severity: info
+
+  - id: nvidia_display_container
+    priority: 140
+    match:
+      name_equals: "NVDisplay.Container.exe"
+    annotation: "NVIDIA Display Container"
+    annotation_en: "NVIDIA Display Container"
+    category: vendor
+    severity: info
+
+  - id: nvidia_nvsphelper
+    priority: 130
+    match:
+      name_equals: "nvsphelper64.exe"
+    annotation: "NVIDIA ShadowPlay helper"
+    annotation_en: "NVIDIA ShadowPlay helper"
+    category: vendor
+    severity: info
+
+  # ==================== Microsoft Defender ====================
+  - id: defender_msmpeng
+    priority: 180
+    match:
+      name_equals: "MsMpEng.exe"
+    annotation: "Microsoft Defender Antivirus (основной антивирусный движок)"
+    annotation_en: "Microsoft Defender Antivirus (main engine)"
+    category: antivirus
+    severity: info
+
+  - id: defender_nissrv
+    priority: 160
+    match:
+      name_equals: "NisSrv.exe"
+    annotation: "Microsoft Defender Network Inspection Service"
+    annotation_en: "Microsoft Defender Network Inspection Service"
+    category: antivirus
+    severity: info
+
+  - id: defender_securityhealth
+    priority: 140
+    match:
+      name_equals: "SecurityHealthService.exe"
+    annotation: "Windows Security Health Service"
+    annotation_en: "Windows Security Health Service"
+    category: antivirus
+    severity: info
+
+  - id: smartscreen
+    priority: 140
+    match:
+      name_equals: "smartscreen.exe"
+    annotation: "Windows SmartScreen (проверка загрузок и приложений)"
+    annotation_en: "Windows SmartScreen (download and app reputation checks)"
+    category: antivirus
+    severity: info
+
+  # ==================== RuntimeBroker & Shell ====================
+  - id: runtimebroker
+    priority: 170
+    match:
+      name_equals: "RuntimeBroker.exe"
+    annotation: "Runtime Broker — управляет правами UWP/Store-приложений. Много экземпляров — нормально."
+    annotation_en: "Runtime Broker — manages permissions for UWP/Store apps. Multiple instances are normal."
+    category: system
+    severity: info
+    actions:
+      - "Если постоянно жрёт CPU — проверьте, какое Store-приложение его будит"
+
+  - id: searchhost
+    priority: 130
+    match:
+      name_equals: "SearchHost.exe"
+    annotation: "Windows Search / Cortana host"
+    annotation_en: "Windows Search / Cortana host"
+    category: system
+    severity: info
+
+  - id: startmenu
+    priority: 130
+    match:
+      name_equals: "StartMenuExperienceHost.exe"
+    annotation: "Хост меню Пуск Windows"
+    annotation_en: "Windows Start menu host"
+    category: system
+    severity: info
+
+  - id: shellexperience
+    priority: 120
+    match:
+      name_equals: "ShellExperienceHost.exe"
+    annotation: "Shell Experience Host (центр уведомлений, быстрые действия)"
+    annotation_en: "Shell Experience Host (Action Center, quick settings)"
+    category: system
+    severity: info
+
+  - id: textinputhost
+    priority: 120
+    match:
+      name_equals: "TextInputHost.exe"
+    annotation: "Text Input Host (сенсорная клавиатура, рукописный ввод)"
+    annotation_en: "Text Input Host (touch keyboard, handwriting)"
+    category: system
+    severity: info
+
+  # ==================== Browsers ====================
+  - id: firefox_content
+    priority: 160
+    match:
+      name_equals: "firefox.exe"
+      cmdline_contains: "-contentproc"
+    annotation: "Firefox content process (вкладка / iframe). Много процессов — нормальная изоляция."
+    annotation_en: "Firefox content process (tab / iframe). Many processes = normal isolation."
+    category: browser_worker
+    severity: info
+
+  - id: firefox_main
+    priority: 120
+    match:
+      name_equals: "firefox.exe"
+    annotation: "Mozilla Firefox (основной процесс)"
+    annotation_en: "Mozilla Firefox (main process)"
+    category: worker
+    severity: info
+
+  - id: msedgewebview
+    priority: 150
+    match:
+      name_equals: "msedgewebview2.exe"
+    annotation: "Microsoft Edge WebView2 — встраиваемый браузерный движок (используется многими программами)"
+    annotation_en: "Microsoft Edge WebView2 — embedded browser engine used by many apps"
+    category: browser_worker
+    severity: info
+
+  - id: chrome_worker
+    priority: 150
+    match:
+      name_contains: "chrome"
+      cmdline_contains: "--type="
+    annotation: "Chrome / Chromium worker process (renderer, gpu, utility...)"
+    annotation_en: "Chrome / Chromium worker process (renderer, gpu, utility...)"
+    category: browser_worker
+    severity: info
+
+  # ==================== Spotify ====================
+  - id: spotify_worker
+    priority: 140
+    match:
+      name_equals: "Spotify.exe"
+      cmdline_contains: "--type="
+    annotation: "Spotify helper process (gpu / renderer / utility)"
+    annotation_en: "Spotify helper process (gpu / renderer / utility)"
+    category: worker
+    severity: info
+
+  - id: spotify_main
+    priority: 120
+    match:
+      name_equals: "Spotify.exe"
+    annotation: "Spotify (основной процесс)"
+    annotation_en: "Spotify (main process)"
+    category: worker
+    severity: info
+
+  # ==================== OneDrive / Office ====================
+  - id: onedrive
+    priority: 140
+    match:
+      name_equals: "OneDrive.exe"
+    annotation: "Microsoft OneDrive (синхронизация файлов)"
+    annotation_en: "Microsoft OneDrive (file sync)"
+    category: worker
+    severity: info
+
+  - id: office_clicktorun
+    priority: 140
+    match:
+      name_equals: "OfficeClickToRun.exe"
+    annotation: "Office Click-to-Run (служба обновления и запуска Office)"
+    annotation_en: "Office Click-to-Run (Office update and launch service)"
+    category: updater
+    severity: info
+
+  # ==================== Updaters ====================
+  - id: google_update
+    priority: 150
+    match:
+      path_contains: "Google\\Update"
+    annotation: "Google Update (обновление Chrome, Google Drive и др.)"
+    annotation_en: "Google Update (Chrome, Google Drive, etc.)"
+    category: updater
+    severity: info
+
+  - id: adobe_arm
+    priority: 140
+    match:
+      name_equals: "armsvc.exe"
+    annotation: "Adobe Acrobat Update Service"
+    annotation_en: "Adobe Acrobat Update Service"
+    category: updater
+    severity: info
+
+  # ==================== System critical ====================
+  - id: services
+    priority: 100
+    match:
+      name_equals: "services.exe"
+    annotation: "Service Control Manager — запускает и контролирует службы Windows"
+    annotation_en: "Service Control Manager — starts and controls Windows services"
+    category: system
+    severity: info
+
+  - id: svchost
+    priority: 50
+    match:
+      name_equals: "svchost.exe"
+    annotation: "Service Host — общий хост для DLL-служб Windows. Смотрите cmdline (-k ...), чтобы понять, какая именно служба."
+    annotation_en: "Service Host — shared host for Windows DLL-based services. Check cmdline (-k / -s) for the actual service."
+    category: system
+    severity: info
+
+  - id: explorer
+    priority: 100
+    match:
+      name_equals: "explorer.exe"
+    annotation: "Проводник Windows (оболочка рабочего стола)"
+    annotation_en: "Windows Explorer (desktop shell)"
+    category: system
+    severity: info
+
+  - id: csrss
+    priority: 100
+    match:
+      name_equals: "csrss.exe"
+    annotation: "Client/Server Runtime Subsystem — критический системный процесс"
+    annotation_en: "Client/Server Runtime Subsystem — critical system process"
+    category: system
+    severity: info
+
+  - id: lsass
+    priority: 100
+    match:
+      name_equals: "lsass.exe"
+    annotation: "Local Security Authority — аутентификация, политики безопасности"
+    annotation_en: "Local Security Authority — authentication and security policy"
+    category: system
+    severity: info
+
+  - id: wininit
+    priority: 100
+    match:
+      name_equals: "wininit.exe"
+    annotation: "Windows Initialization Process"
+    annotation_en: "Windows Initialization Process"
+    category: system
+    severity: info
+
+  - id: dwm
+    priority: 100
+    match:
+      name_equals: "dwm.exe"
+    annotation: "Desktop Window Manager (композитный менеджер окон)"
+    annotation_en: "Desktop Window Manager (compositor)"
+    category: system
+    severity: info
+
+  - id: sihost
+    priority: 110
+    match:
+      name_equals: "sihost.exe"
+    annotation: "Shell Infrastructure Host"
+    annotation_en: "Shell Infrastructure Host"
+    category: system
+    severity: info
+
+  - id: taskhostw
+    priority: 90
+    match:
+      name_equals: "taskhostw.exe"
+    annotation: "Task Host Window — запускает задачи из планировщика заданий"
+    annotation_en: "Task Host Window — runs scheduled tasks"
+    category: system
+    severity: info
+
+  - id: dllhost
+    priority: 80
+    match:
+      name_equals: "dllhost.exe"
+    annotation: "COM Surrogate (dllhost) — запускает COM-объекты вне процесса"
+    annotation_en: "COM Surrogate (dllhost) — runs COM objects out-of-process"
+    category: system
+    severity: info
+
+  - id: conhost
+    priority: 70
+    match:
+      name_equals: "conhost.exe"
+    annotation: "Console Window Host"
+    annotation_en: "Console Window Host"
+    category: system
+    severity: info
+
+  - id: fontdrvhost
+    priority: 70
+    match:
+      name_equals: "fontdrvhost.exe"
+    annotation: "Usermode Font Driver Host"
+    annotation_en: "Usermode Font Driver Host"
+    category: system
+    severity: info
+
+  - id: ctfmon
+    priority: 80
+    match:
+      name_equals: "ctfmon.exe"
+    annotation: "CTF Loader — языковая панель / альтернативный ввод"
+    annotation_en: "CTF Loader — language bar / alternative input"
+    category: system
+    severity: info
+
+  - id: audiodg
+    priority: 80
+    match:
+      name_equals: "audiodg.exe"
+    annotation: "Windows Audio Device Graph Isolation"
+    annotation_en: "Windows Audio Device Graph Isolation"
+    category: system
+    severity: info
+
+  - id: searchindexer
+    priority: 90
+    match:
+      name_equals: "SearchIndexer.exe"
+    annotation: "Windows Search Indexer — индексирует файлы для быстрого поиска"
+    annotation_en: "Windows Search Indexer"
+    category: system
+    severity: info
+
+  - id: widgets
+    priority: 100
+    match:
+      name_equals: "Widgets.exe"
+    annotation: "Windows Widgets"
+    annotation_en: "Windows Widgets"
+    category: system
+    severity: info
+
+  - id: widgetservice
+    priority: 100
+    match:
+      name_equals: "WidgetService.exe"
+    annotation: "Windows Widgets Service"
+    annotation_en: "Windows Widgets Service"
+    category: system
+    severity: info
+
+  # ==================== Additional common ====================
+  - id: google_chrome_main
+    priority: 130
+    match:
+      name_equals: "chrome.exe"
+    annotation: "Google Chrome (основной процесс или worker без --type)"
+    annotation_en: "Google Chrome (main or worker without --type)"
+    category: worker
+    severity: info
+
+  - id: msedge
+    priority: 130
+    match:
+      name_equals: "msedge.exe"
+    annotation: "Microsoft Edge"
+    annotation_en: "Microsoft Edge"
+    category: worker
+    severity: info
+
+  - id: teams
+    priority: 140
+    match:
+      name_contains: "Teams"
+    annotation: "Microsoft Teams"
+    annotation_en: "Microsoft Teams"
+    category: worker
+    severity: info
+
+  - id: gamebar
+    priority: 140
+    match:
+      name_equals: "GameBar.exe"
+    annotation: "Xbox Game Bar"
+    annotation_en: "Xbox Game Bar"
+    category: system
+    severity: info
+
+  - id: gamebarft
+    priority: 130
+    match:
+      name_equals: "GameBarFTServer.exe"
+    annotation: "Xbox Game Bar FT Server"
+    annotation_en: "Xbox Game Bar FT Server"
+    category: system
+    severity: info
+
+  - id: everything
+    priority: 140
+    match:
+      name_equals: "Everything.exe"
+    annotation: "Voidtools Everything (поиск файлов)"
+    annotation_en: "voidtools Everything (file search)"
+    category: worker
+    severity: info
+
+  - id: windscribe
+    priority: 140
+    match:
+      name_contains: "Windscribe"
+    annotation: "Windscribe VPN"
+    annotation_en: "Windscribe VPN"
+    category: vendor
+    severity: info
+
+  - id: openvpn
+    priority: 140
+    match:
+      name_contains: "openvpn"
+    annotation: "OpenVPN"
+    annotation_en: "OpenVPN"
+    category: vendor
+    severity: info
+
+  - id: realtek_audio
+    priority: 130
+    match:
+      name_contains: "RtkAudUService"
+    annotation: "Realtek Audio Universal Service"
+    annotation_en: "Realtek Audio Universal Service"
+    category: vendor
+    severity: info
+
+  - id: acer_care
+    priority: 130
+    match:
+      path_contains: "Acer\\Care Center"
+    annotation: "Acer Care Center"
+    annotation_en: "Acer Care Center"
+    category: vendor
+    severity: info
+
+  - id: acer_nitrosense
+    priority: 130
+    match:
+      path_contains: "NitroSense"
+    annotation: "Acer NitroSense / Predator Sense"
+    annotation_en: "Acer NitroSense / Predator Sense"
+    category: vendor
+    severity: info
+
+  - id: adobe_acrobat
+    priority: 130
+    match:
+      name_equals: "acrotray.exe"
+    annotation: "Adobe Acrobat Helper (acrotray)"
+    annotation_en: "Adobe Acrobat Helper (acrotray)"
+    category: worker
+    severity: info
+
+  - id: adobe_arm_path
+    priority: 135
+    match:
+      path_contains: "Adobe\\ARM"
+    annotation: "Adobe Acrobat/Reader Update"
+    annotation_en: "Adobe Acrobat/Reader Update"
+    category: updater
+    severity: info
+
+  - id: bonjour
+    priority: 120
+    match:
+      name_equals: "mDNSResponder.exe"
+    annotation: "Apple Bonjour / mDNS Responder"
+    annotation_en: "Apple Bonjour / mDNS Responder"
+    category: vendor
+    severity: info
+
+  - id: wslservice
+    priority: 130
+    match:
+      name_equals: "wslservice.exe"
+    annotation: "Windows Subsystem for Linux Service"
+    annotation_en: "Windows Subsystem for Linux Service"
+    category: system
+    severity: info
+
+  - id: securityhealthsystray
+    priority: 120
+    match:
+      name_equals: "SecurityHealthSystray.exe"
+    annotation: "Windows Security notification icon"
+    annotation_en: "Windows Security notification icon"
+    category: antivirus
+    severity: info
+
+  - id: applicationframehost
+    priority: 110
+    match:
+      name_equals: "ApplicationFrameHost.exe"
+    annotation: "Application Frame Host (окна UWP-приложений)"
+    annotation_en: "Application Frame Host (UWP windows)"
+    category: system
+    severity: info
+
+  - id: backgroundtaskhost
+    priority: 100
+    match:
+      name_equals: "backgroundTaskHost.exe"
+    annotation: "Background Task Host (фоновые задачи UWP)"
+    annotation_en: "Background Task Host (UWP background tasks)"
+    category: system
+    severity: info
+
+  - id: systemsettings
+    priority: 110
+    match:
+      name_equals: "SystemSettings.exe"
+    annotation: "Параметры Windows"
+    annotation_en: "Windows Settings"
+    category: system
+    severity: info
+
+  - id: crossdeviceresume
+    priority: 100
+    match:
+      name_equals: "CrossDeviceResume.exe"
+    annotation: "Cross Device Resume (продолжение задач между устройствами)"
+    annotation_en: "Cross Device Resume"
+    category: system
+    severity: info
+
+  - id: killer_network
+    priority: 120
+    match:
+      path_contains: "RivetNetworks\\Killer"
+    annotation: "Killer Network / Intel Killer networking software"
+    annotation_en: "Killer Network / Intel Killer networking software"
+    category: vendor
+    severity: info
+
+  - id: urbanvpn
+    priority: 120
+    match:
+      name_contains: "urban-vpn"
+    annotation: "Urban VPN"
+    annotation_en: "Urban VPN"
+    category: vendor
+    severity: info
+
+  - id: gameinput
+    priority: 120
+    match:
+      name_contains: "GameInput"
+    annotation: "Microsoft GameInput"
+    annotation_en: "Microsoft GameInput"
+    category: system
+    severity: info
+
+  - id: gamingservices
+    priority: 120
+    match:
+      name_contains: "gamingservices"
+    annotation: "Xbox / Gaming Services"
+    annotation_en: "Xbox / Gaming Services"
+    category: system
+    severity: info
+
+  - id: nvidia_app
+    priority: 125
+    match:
+      path_contains: "NVIDIA Corporation\\NVIDIA App"
+    annotation: "NVIDIA App component"
+    annotation_en: "NVIDIA App component"
+    category: vendor
+    severity: info
+
+  # ==================== Steam / Gaming ====================
+  - id: steam_main
+    priority: 140
+    match:
+      name_equals: "steam.exe"
+    annotation: "Steam — клиент Valve для игр"
+    annotation_en: "Steam — Valve game client"
+    category: worker
+    severity: info
+
+  - id: steam_webhelper
+    priority: 145
+    match:
+      name_equals: "steamwebhelper.exe"
+    annotation: "Steam WebHelper — CEF/Chromium UI внутри Steam. Несколько процессов — нормально."
+    annotation_en: "Steam WebHelper — CEF/Chromium UI inside Steam. Multiple processes are normal."
+    category: browser_worker
+    severity: info
+
+  - id: steam_service
+    priority: 130
+    match:
+      name_equals: "SteamService.exe"
+    annotation: "Steam Service — фоновая служба обновления Steam"
+    annotation_en: "Steam Service — background update service"
+    category: vendor
+    severity: info
+
+  - id: gameoverlay
+    priority: 130
+    match:
+      name_contains: "gameoverlay"
+    annotation: "Steam Game Overlay"
+    annotation_en: "Steam Game Overlay"
+    category: vendor
+    severity: info
+
+  # ==================== Discord ====================
+  - id: discord_main
+    priority: 140
+    match:
+      name_equals: "Discord.exe"
+    annotation: "Discord"
+    annotation_en: "Discord"
+    category: worker
+    severity: info
+
+  - id: discord_worker
+    priority: 145
+    match:
+      name_equals: "Discord.exe"
+      cmdline_contains: "--type="
+    annotation: "Discord helper process (GPU / renderer / utility)"
+    annotation_en: "Discord helper process (GPU / renderer / utility)"
+    category: browser_worker
+    severity: info
+
+  # ==================== Telegram ====================
+  - id: telegram
+    priority: 130
+    match:
+      name_equals: "Telegram.exe"
+    annotation: "Telegram Desktop"
+    annotation_en: "Telegram Desktop"
+    category: worker
+    severity: info
+
+  # ==================== Zoom / Meet ====================
+  - id: zoom
+    priority: 130
+    match:
+      name_contains: "Zoom"
+    annotation: "Zoom"
+    annotation_en: "Zoom"
+    category: worker
+    severity: info
+
+  # ==================== Dropbox ====================
+  - id: dropbox
+    priority: 130
+    match:
+      name_contains: "Dropbox"
+    annotation: "Dropbox (синхронизация файлов)"
+    annotation_en: "Dropbox (file sync)"
+    category: worker
+    severity: info
+
+  # ==================== Node / Dev tools ====================
+  - id: node
+    priority: 120
+    match:
+      name_equals: "node.exe"
+    annotation: "Node.js runtime"
+    annotation_en: "Node.js runtime"
+    category: worker
+    severity: info
+
+  - id: code_helper
+    priority: 130
+    match:
+      name_contains: "Code.exe"
+    annotation: "Visual Studio Code / Cursor helper"
+    annotation_en: "Visual Studio Code / Cursor helper"
+    category: worker
+    severity: info
+
+  - id: code_worker
+    priority: 135
+    match:
+      name_contains: "Code"
+      cmdline_contains: "--type="
+    annotation: "VS Code / Electron worker process"
+    annotation_en: "VS Code / Electron worker process"
+    category: browser_worker
+    severity: info
+
+  # ==================== JetBrains ====================
+  - id: jetbrains
+    priority: 120
+    match:
+      path_contains: "JetBrains"
+    annotation: "JetBrains IDE / toolbox component"
+    annotation_en: "JetBrains IDE / toolbox component"
+    category: worker
+    severity: info
+
+  # ==================== Python ====================
+  - id: python
+    priority: 110
+    match:
+      name_equals: "python.exe"
+    annotation: "Python interpreter"
+    annotation_en: "Python interpreter"
+    category: worker
+    severity: info
+
+  - id: pythonw
+    priority: 110
+    match:
+      name_equals: "pythonw.exe"
+    annotation: "Python (windowless)"
+    annotation_en: "Python (windowless)"
+    category: worker
+    severity: info
+
+  # ==================== Windows more ====================
+  - id: taskmgr
+    priority: 100
+    match:
+      name_equals: "Taskmgr.exe"
+    annotation: "Диспетчер задач Windows"
+    annotation_en: "Windows Task Manager"
+    category: system
+    severity: info
+
+  - id: mmc
+    priority: 100
+    match:
+      name_equals: "mmc.exe"
+    annotation: "Microsoft Management Console"
+    annotation_en: "Microsoft Management Console"
+    category: system
+    severity: info
+
+  - id: rundll32
+    priority: 90
+    match:
+      name_equals: "rundll32.exe"
+    annotation: "Run a DLL as an app (rundll32). Смотрите cmdline — какой DLL и точка входа."
+    annotation_en: "Run a DLL as an app (rundll32). Check cmdline for DLL and entry point."
+    category: system
+    severity: info
+
+  - id: msiexec
+    priority: 100
+    match:
+      name_equals: "msiexec.exe"
+    annotation: "Windows Installer"
+    annotation_en: "Windows Installer"
+    category: system
+    severity: info
+
+  - id: trustedinstaller
+    priority: 110
+    match:
+      name_equals: "TrustedInstaller.exe"
+    annotation: "Windows Modules Installer — устанавливает обновления и компоненты Windows"
+    annotation_en: "Windows Modules Installer — installs updates and components"
+    category: system
+    severity: info
+
+  - id: tiworker
+    priority: 110
+    match:
+      name_equals: "TiWorker.exe"
+    annotation: "Windows Update worker (Trusted Installer)"
+    annotation_en: "Windows Update worker (Trusted Installer)"
+    category: updater
+    severity: info
+
+  - id: usosvc
+    priority: 100
+    match:
+      cmdline_contains: "-s UsoSvc"
+    annotation: "Update Orchestrator Service (Windows Update)"
+    annotation_en: "Update Orchestrator Service (Windows Update)"
+    category: updater
+    severity: info
+
+  - id: wuauclt
+    priority: 100
+    match:
+      name_equals: "wuauclt.exe"
+    annotation: "Windows Update client"
+    annotation_en: "Windows Update client"
+    category: updater
+    severity: info
+
+  - id: mousocore
+    priority: 100
+    match:
+      name_equals: "MoUsoCoreWorker.exe"
+    annotation: "Windows Update Medic / USO worker"
+    annotation_en: "Windows Update Medic / USO worker"
+    category: updater
+    severity: info
+
+  - id: compat_telemetry
+    priority: 150
+    match:
+      name_equals: "CompPkgSup.DLL"
+    annotation: "Compatibility Package Support (связан с телеметрией совместимости)"
+    annotation_en: "Compatibility Package Support (related to compatibility telemetry)"
+    category: telemetry
+    severity: info
+
+  - id: diagtrack
+    priority: 160
+    match:
+      cmdline_contains: "DiagTrack"
+    annotation: "Connected User Experiences and Telemetry (DiagTrack) — телеметрия Windows"
+    annotation_en: "Connected User Experiences and Telemetry (DiagTrack) — Windows telemetry"
+    category: telemetry
+    severity: info
+    actions:
+      - "Можно ограничить в Параметры → Конфиденциальность → Диагностика"
+
+  - id: wsqmcons
+    priority: 140
+    match:
+      name_equals: "wsqmcons.exe"
+    annotation: "Windows SQM (Customer Experience Improvement) — телеметрия"
+    annotation_en: "Windows SQM (Customer Experience Improvement) — telemetry"
+    category: telemetry
+    severity: info
+
+  # ==================== Antivirus third-party ====================
+  - id: avast
+    priority: 150
+    match:
+      path_contains: "Avast"
+    annotation: "Avast Antivirus component"
+    annotation_en: "Avast Antivirus component"
+    category: antivirus
+    severity: info
+
+  - id: avg
+    priority: 150
+    match:
+      path_contains: "AVG"
+    annotation: "AVG Antivirus component"
+    annotation_en: "AVG Antivirus component"
+    category: antivirus
+    severity: info
+
+  - id: kaspersky
+    priority: 150
+    match:
+      path_contains: "Kaspersky"
+    annotation: "Kaspersky Antivirus component"
+    annotation_en: "Kaspersky Antivirus component"
+    category: antivirus
+    severity: info
+
+  - id: eset
+    priority: 150
+    match:
+      path_contains: "ESET"
+    annotation: "ESET Antivirus component"
+    annotation_en: "ESET Antivirus component"
+    category: antivirus
+    severity: info
+
+  - id: bitdefender
+    priority: 150
+    match:
+      path_contains: "Bitdefender"
+    annotation: "Bitdefender component"
+    annotation_en: "Bitdefender component"
+    category: antivirus
+    severity: info
+
+  - id: malwarebytes
+    priority: 150
+    match:
+      name_contains: "Malwarebytes"
+    annotation: "Malwarebytes"
+    annotation_en: "Malwarebytes"
+    category: antivirus
+    severity: info
+
+  # ==================== GPU / more AMD NVIDIA ====================
+  - id: amd_crash_defender
+    priority: 130
+    match:
+      name_equals: "AMDCrashDefender.exe"
+    annotation: "AMD Crash Defender"
+    annotation_en: "AMD Crash Defender"
+    category: vendor
+    severity: info
+
+  - id: amd_external_events
+    priority: 130
+    match:
+      name_equals: "ExternalEventUtility.exe"
+    annotation: "AMD External Events Utility"
+    annotation_en: "AMD External Events Utility"
+    category: vendor
+    severity: info
+
+  - id: atieclxx
+    priority: 130
+    match:
+      name_equals: "atieclxx.exe"
+    annotation: "AMD External Events Client Module"
+    annotation_en: "AMD External Events Client Module"
+    category: vendor
+    severity: info
+
+  - id: atiesrxx
+    priority: 130
+    match:
+      name_equals: "atiesrxx.exe"
+    annotation: "AMD External Events Service Module"
+    annotation_en: "AMD External Events Service Module"
+    category: vendor
+    severity: info
+
+  - id: nvidia_share
+    priority: 130
+    match:
+      name_equals: "NVIDIA Share.exe"
+    annotation: "NVIDIA Share / ShadowPlay"
+    annotation_en: "NVIDIA Share / ShadowPlay"
+    category: vendor
+    severity: info
+
+  - id: nvidia_webview
+    priority: 120
+    match:
+      path_contains: "NVIDIA"
+      name_equals: "cef_shell.exe"
+    annotation: "NVIDIA CEF UI shell"
+    annotation_en: "NVIDIA CEF UI shell"
+    category: vendor
+    severity: info
+
+  # ==================== Printer / peripheral ====================
+  - id: hp
+    priority: 110
+    match:
+      path_contains: "HP\\"
+    annotation: "HP software component"
+    annotation_en: "HP software component"
+    category: vendor
+    severity: info
+
+  - id: logitech
+    priority: 120
+    match:
+      path_contains: "Logitech"
+    annotation: "Logitech software"
+    annotation_en: "Logitech software"
+    category: vendor
+    severity: info
+
+  - id: razer
+    priority: 120
+    match:
+      path_contains: "Razer"
+    annotation: "Razer software"
+    annotation_en: "Razer software"
+    category: vendor
+    severity: info
+
+  - id: icue
+    priority: 120
+    match:
+      name_contains: "iCUE"
+    annotation: "Corsair iCUE"
+    annotation_en: "Corsair iCUE"
+    category: vendor
+    severity: info
+
+  # ==================== Backup / security tools ====================
+  - id: macrium
+    priority: 120
+    match:
+      path_contains: "Macrium"
+    annotation: "Macrium Reflect"
+    annotation_en: "Macrium Reflect"
+    category: worker
+    severity: info
+
+  - id: veracrypt
+    priority: 120
+    match:
+      name_contains: "VeraCrypt"
+    annotation: "VeraCrypt"
+    annotation_en: "VeraCrypt"
+    category: worker
+    severity: info
+
+  # ==================== Misc common ====================
+  - id: winrar
+    priority: 100
+    match:
+      name_equals: "WinRAR.exe"
+    annotation: "WinRAR"
+    annotation_en: "WinRAR"
+    category: worker
+    severity: info
+
+  - id: "7zip"
+    priority: 100
+    match:
+      name_equals: "7zFM.exe"
+    annotation: "7-Zip File Manager"
+    annotation_en: "7-Zip File Manager"
+    category: worker
+    severity: info
+
+  - id: notepadpp
+    priority: 100
+    match:
+      name_equals: "notepad++.exe"
+    annotation: "Notepad++"
+    annotation_en: "Notepad++"
+    category: worker
+    severity: info
+
+  - id: powertoys
+    priority: 120
+    match:
+      path_contains: "PowerToys"
+    annotation: "Microsoft PowerToys"
+    annotation_en: "Microsoft PowerToys"
+    category: worker
+    severity: info
+
+  - id: widgets_board
+    priority: 100
+    match:
+      name_equals: "WidgetBoard.exe"
+    annotation: "Windows Widgets Board"
+    annotation_en: "Windows Widgets Board"
+    category: system
+    severity: info
+
+  - id: phoneexperience
+    priority: 110
+    match:
+      name_contains: "PhoneExperience"
+    annotation: "Phone Link / Your Phone"
+    annotation_en: "Phone Link / Your Phone"
+    category: system
+    severity: info
+
+  - id: clicktorun_svc
+    priority: 130
+    match:
+      name_equals: "AppVShNotify.exe"
+    annotation: "Office Click-to-Run notifier"
+    annotation_en: "Office Click-to-Run notifier"
+    category: updater
+    severity: info
+
+  - id: searchapp
+    priority: 110
+    match:
+      name_equals: "SearchApp.exe"
+    annotation: "Windows Search App"
+    annotation_en: "Windows Search App"
+    category: system
+    severity: info
+
+  - id: lockapp
+    priority: 100
+    match:
+      name_equals: "LockApp.exe"
+    annotation: "Windows Lock Screen"
+    annotation_en: "Windows Lock Screen"
+    category: system
+    severity: info
+
+  - id: systemsettingsbroker
+    priority: 100
+    match:
+      name_equals: "SystemSettingsBroker.exe"
+    annotation: "System Settings Broker"
+    annotation_en: "System Settings Broker"
+    category: system
+    severity: info

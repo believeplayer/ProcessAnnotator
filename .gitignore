@@ -1,0 +1,59 @@
+# Build trees
+build/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+CMakeUserPresets.json
+
+# Visual Studio / MSVC
+.vs/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.filters
+*.aps
+*.pdb
+*.ilk
+*.exp
+*.idb
+*.ipdb
+*.iobj
+
+# Qt
+qt-prefix.txt
+*.qmlc
+*.jsc
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+# FetchContent / vcpkg leftovers (never commit)
+_deps/
+vcpkg_installed/
+
+# Binaries produced next to sources
+*.exe
+*.dll
+*.lib
+*.obj
+*.pch
+
+# Local caches / secrets (app stores these in %LOCALAPPDATA%)
+hash_cache.dat
+sig_cache.dat
+*.vtkey
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+*.swp
+.idea/
+.vscode/
+*.code-workspace

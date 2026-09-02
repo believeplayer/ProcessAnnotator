@@ -1,0 +1,204 @@
+# Browsers, messengers, common internet apps
+rules:
+  - id: chrome_main
+    priority: 130
+    match: { name_equals: "chrome.exe" }
+    annotation: "Google Chrome (основной или worker). Много процессов — нормальная изоляция вкладок."
+    annotation_en: "Google Chrome (main or worker). Many processes = normal tab isolation."
+    category: browser_worker
+
+  - id: chrome_type
+    priority: 140
+    match: { name_equals: "chrome.exe", cmdline_contains: "--type=" }
+    annotation: "Chrome worker (renderer / gpu / utility / extension)"
+    annotation_en: "Chrome worker (renderer / gpu / utility / extension)"
+    category: browser_worker
+
+  - id: msedge_worker
+    priority: 140
+    match: { name_equals: "msedge.exe", cmdline_contains: "--type=" }
+    annotation: "Edge worker (renderer / gpu / utility)"
+    annotation_en: "Edge worker (renderer / gpu / utility)"
+    category: browser_worker
+
+  - id: brave
+    priority: 130
+    match: { name_equals: "brave.exe" }
+    annotation: "Brave Browser"
+    annotation_en: "Brave Browser"
+    category: browser_worker
+
+  - id: opera
+    priority: 120
+    match: { name_equals: "opera.exe" }
+    annotation: "Opera Browser"
+    annotation_en: "Opera Browser"
+    category: browser_worker
+
+  - id: vivaldi
+    priority: 120
+    match: { name_equals: "vivaldi.exe" }
+    annotation: "Vivaldi Browser"
+    annotation_en: "Vivaldi Browser"
+    category: browser_worker
+
+  - id: chromium
+    priority: 110
+    match: { name_equals: "chromium.exe" }
+    annotation: "Chromium"
+    annotation_en: "Chromium"
+    category: browser_worker
+
+  - id: yandex_browser
+    priority: 130
+    match: { name_equals: "browser.exe", path_contains: "Yandex" }
+    annotation: "Яндекс.Браузер"
+    annotation_en: "Yandex Browser"
+    category: browser_worker
+
+  - id: yandex_browser2
+    priority: 130
+    match: { name_contains: "YandexBrowser" }
+    annotation: "Яндекс.Браузер"
+    annotation_en: "Yandex Browser"
+    category: browser_worker
+
+  - id: tor_browser
+    priority: 120
+    match: { name_equals: "firefox.exe", path_contains: "Tor Browser" }
+    annotation: "Tor Browser"
+    annotation_en: "Tor Browser"
+    category: browser_worker
+
+  - id: ie_iexplore
+    priority: 100
+    match: { name_equals: "iexplore.exe" }
+    annotation: "Internet Explorer (legacy)"
+    annotation_en: "Internet Explorer (legacy)"
+    category: browser_worker
+
+  - id: discord
+    priority: 130
+    match: { name_equals: "Discord.exe" }
+    annotation: "Discord"
+    annotation_en: "Discord"
+    category: worker
+
+  - id: whatsapp
+    priority: 120
+    match: { name_equals: "WhatsApp.exe" }
+    annotation: "WhatsApp Desktop"
+    annotation_en: "WhatsApp Desktop"
+    category: worker
+
+  - id: signal
+    priority: 120
+    match: { name_equals: "Signal.exe" }
+    annotation: "Signal"
+    annotation_en: "Signal"
+    category: worker
+
+  - id: slack
+    priority: 120
+    match: { name_equals: "slack.exe" }
+    annotation: "Slack"
+    annotation_en: "Slack"
+    category: worker
+
+  - id: skype
+    priority: 120
+    match: { name_equals: "Skype.exe" }
+    annotation: "Skype"
+    annotation_en: "Skype"
+    category: worker
+
+  - id: zoom_launcher
+    priority: 110
+    match: { name_equals: "ZoomLauncher.exe" }
+    annotation: "Zoom Launcher"
+    annotation_en: "Zoom Launcher"
+    category: worker
+
+  - id: viber
+    priority: 110
+    match: { name_equals: "Viber.exe" }
+    annotation: "Viber"
+    annotation_en: "Viber"
+    category: worker
+
+  - id: element
+    priority: 110
+    match: { name_equals: "Element.exe" }
+    annotation: "Element (Matrix)"
+    annotation_en: "Element (Matrix)"
+    category: worker
+
+  - id: thunderbird
+    priority: 110
+    match: { name_equals: "thunderbird.exe" }
+    annotation: "Mozilla Thunderbird"
+    annotation_en: "Mozilla Thunderbird"
+    category: worker
+
+  - id: mailbird
+    priority: 100
+    match: { name_equals: "Mailbird.exe" }
+    annotation: "Mailbird"
+    annotation_en: "Mailbird"
+    category: worker
+
+  - id: googledrive
+    priority: 120
+    match: { name_equals: "GoogleDriveFS.exe" }
+    annotation: "Google Drive for Desktop"
+    annotation_en: "Google Drive for Desktop"
+    category: worker
+
+  - id: googledrivesync
+    priority: 120
+    match: { name_contains: "googledrivesync" }
+    annotation: "Google Drive sync"
+    annotation_en: "Google Drive sync"
+    category: worker
+
+  - id: icloud
+    priority: 110
+    match: { name_contains: "iCloud", name_contains: ".exe" }
+    annotation: "Apple iCloud для Windows"
+    annotation_en: "Apple iCloud for Windows"
+    category: worker
+
+  - id: mega
+    priority: 110
+    match: { name_equals: "MEGAsync.exe" }
+    annotation: "MEGA Sync"
+    annotation_en: "MEGA Sync"
+    category: worker
+
+  - id: nextcloud
+    priority: 110
+    match: { name_equals: "nextcloud.exe" }
+    annotation: "Nextcloud client"
+    annotation_en: "Nextcloud client"
+    category: worker
+
+  - id: yandex_disk
+    priority: 120
+    match: { name_equals: "YandexDisk2.exe" }
+    annotation: "Яндекс.Диск"
+    annotation_en: "Yandex Disk"
+    category: worker
+
+  - id: yandex_disk2
+    priority: 115
+    match: { path_contains: "Yandex.Disk" }
+    annotation: "Яндекс.Диск"
+    annotation_en: "Yandex Disk"
+    category: worker
+
+  - id: mailru_cloud
+    priority: 110
+    match: { path_contains: "Mail.Ru\\Cloud" }
+    annotation: "Облако Mail.ru"
+    annotation_en: "Mail.ru Cloud"
+    category: worker
