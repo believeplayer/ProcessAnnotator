@@ -14,6 +14,8 @@ Focus: **annotate and explain**, not manage or “clean” the system.
 
 ### Screenshot
 
+![Process tree](docs/tree.png)
+
 ### What it does
 
 - **Process tree** (parent → child) with PID, path, command line
@@ -113,6 +115,8 @@ MIT — see [LICENSE](LICENSE).
 ## Русский
 
 ### Скриншот
+
+![Дерево процессов](docs/tree.png)
 
 ### Что это
 
