@@ -14,10 +14,6 @@ Focus: **annotate and explain**, not manage or “clean” the system.
 
 ### Screenshot
 
-![Process tree](docs/tree.png)
-
-Add a window capture as `docs/tree.png` before publishing.
-
 ### What it does
 
 - **Process tree** (parent → child) with PID, path, command line
@@ -117,10 +113,6 @@ MIT — see [LICENSE](LICENSE).
 ## Русский
 
 ### Скриншот
-
-![Дерево процессов](docs/tree.png)
-
-Перед публикацией положите снимок окна в `docs/tree.png`.
 
 ### Что это
 
